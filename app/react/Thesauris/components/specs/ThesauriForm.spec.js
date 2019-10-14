@@ -216,5 +216,33 @@ describe('ThesauriForm', () => {
         testValidationResult('People', true);
       });
     });
+
+    describe('item name duplicated', () => {
+      const { values: { noDuplicatedLabels } } = ThesauriForm.validation(null, null);
+
+      it('should return true when no two items with the same label', () => {
+        expect(noDuplicatedLabels([])).toBe(true);
+        expect(noDuplicatedLabels([{ label: 'Item 1' }, { label: 'Item 2' }])).toBe(true);
+      });
+
+      it('should return false when two items with the same label', () => {
+        expect(noDuplicatedLabels([{ label: 'Item 1' }, { label: 'Item 1' }])).toBe(false);
+        expect(noDuplicatedLabels([{ label: 'item 1' }, { label: 'Item 1' }])).toBe(false);
+        expect(noDuplicatedLabels([{ label: 'item 2' }, { label: 'Item 1' }, { label: 'Item 1' }])).toBe(false);
+      });
+
+      it('should return false when the item is unique', () => {
+        expect(ThesauriForm.itemLabelDuplicated([{ label: 'label 1' }], { label: 'label 1' })).toBe(false);
+        expect(ThesauriForm.itemLabelDuplicated([{ label: 'label 1' }, { label: 'label 2' }], { label: 'label 1' })).toBe(false);
+        expect(ThesauriForm.itemLabelDuplicated([{ label: 'label 1' }, { label: 'label 2' }], { label: 'label 2' })).toBe(false);
+      });
+
+      it('should return true when the item is NOT unique', () => {
+        expect(ThesauriForm.itemLabelDuplicated([{ label: 'label 1' }, { label: 'label 1' }], { label: 'label 1' })).toBe(true);
+        expect(ThesauriForm.itemLabelDuplicated([{ label: 'label 1' }, { label: 'label 1' }, { label: 'label 1' }], { label: 'Label 1' })).toBe(true);
+        expect(ThesauriForm.itemLabelDuplicated([{ label: 'label 2' }, { label: 'label 1' }, { label: 'label 1' }], { label: 'label 1' })).toBe(true);
+        expect(ThesauriForm.itemLabelDuplicated([{ label: 'Label 1' }, { label: 'label 2' }, { label: 'label 1' }], { label: 'label 1' })).toBe(true);
+      });
+    });
   });
 });

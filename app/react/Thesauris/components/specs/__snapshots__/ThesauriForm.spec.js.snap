@@ -13,6 +13,9 @@ exports[`ThesauriForm render should render DragAndDropContainer with thesauri it
           "duplicated": [Function],
           "required": [Function],
         },
+        "values": Object {
+          "noDuplicatedLabels": [Function],
+        },
       }
     }
   >

@@ -30,6 +30,10 @@ function sanitizeThesauri(thesaurus) {
 }
 
 export class ThesauriForm extends Component {
+  static itemLabelDuplicated(items, item) {
+    return items.filter(eachItem => eachItem.label.toLowerCase() === item.label.toLowerCase()).length > 1;
+  }
+
   static validation(thesauris, id) {
     return {
       name: {
@@ -37,6 +41,9 @@ export class ThesauriForm extends Component {
           thesauri._id !== id &&
           thesauri.name.trim().toLowerCase() === val.trim().toLowerCase()),
         required: notEmpty
+      },
+      values: {
+        noDuplicatedLabels: values => !values.some(x => ThesauriForm.itemLabelDuplicated(values, x))
       }
     };
   }
