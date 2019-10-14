@@ -31,6 +31,9 @@ function sanitizeThesauri(thesaurus) {
 
 export class ThesauriForm extends Component {
   static itemLabelDuplicated(items, item) {
+    if (!items || !item.label) {
+      return false;
+    }
     return items.filter(eachItem => eachItem.label.toLowerCase() === item.label.toLowerCase()).length > 1;
   }
 
@@ -119,6 +122,8 @@ export class ThesauriForm extends Component {
   }
 
   renderItem(value, index) {
+    const { values } = this.props.thesauri;
+
     return (
       <ThesauriFormItem
         ref={f => this.groups.push(f)}
@@ -126,6 +131,7 @@ export class ThesauriForm extends Component {
         index={index}
         removeValue={this.props.removeValue}
         onChange={this.onChange}
+        isDuplicated={ThesauriForm.itemLabelDuplicated(values, value)}
       />
     );
   }

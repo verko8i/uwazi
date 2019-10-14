@@ -10,7 +10,7 @@ export class ThesauriFormField extends Component {
   }
 
   renderValue(value, index, groupIndex) {
-    const { removeValue } = this.props;
+    const { removeValue, isDuplicated } = this.props;
     let model = `thesauri.data.values[${index}].label`;
     if (groupIndex !== undefined) {
       model = `thesauri.data.values[${groupIndex}].values[${index}].label`;
@@ -19,6 +19,11 @@ export class ThesauriFormField extends Component {
       <div key={`item-${groupIndex || ''}${index}`}>
         <Field model={model}>
           <input className="form-control" type="text" placeholder="Item name" />
+          {!groupIndex && isDuplicated && (
+          <div className="validation-error">
+            <Icon icon="exclamation-triangle" size="xs" /> Duplicated name
+          </div>
+          )}
           <button
             tabIndex={index + 500}
             type="button"
@@ -50,6 +55,7 @@ ThesauriFormField.propTypes = {
   }).isRequired,
   index: PropTypes.number.isRequired,
   groupIndex: PropTypes.number,
+  isDuplicated: PropTypes.bool,
 };
 
 export default ThesauriFormField;

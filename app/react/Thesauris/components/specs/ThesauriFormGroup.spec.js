@@ -31,6 +31,13 @@ describe('ThesauriFormGroup', () => {
     it('should render group field and DragAndDropContainer for nested items', () => {
       render();
       expect(component).toMatchSnapshot();
+      expect(component.find('.validation-error').exists()).toBe(false);
+    });
+
+    it('should show error when group field with duplicated label', () => {
+      props.isDuplicated = true;
+      render();
+      expect(component.find('.validation-error').exists()).toBe(true);
     });
 
     it('should render each item as a ThesauriFormField specifying the groupIndex', () => {

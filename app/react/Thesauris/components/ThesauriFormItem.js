@@ -25,7 +25,8 @@ ThesauriFormItem.propTypes = {
     label: PropTypes.string,
     values: PropTypes.array
   }).isRequired,
-  index: PropTypes.number.isRequired
+  index: PropTypes.number.isRequired,
+  isDuplicated: PropTypes.bool,
 };
 
 export default ThesauriFormItem;

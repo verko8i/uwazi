@@ -13,7 +13,8 @@ describe('ThesauriFormItem', () => {
       },
       index: 1,
       removeValue: jest.fn(),
-      onChange: jest.fn()
+      onChange: jest.fn(),
+      isDuplicated: false
     };
   });
 

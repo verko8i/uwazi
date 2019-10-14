@@ -92,6 +92,18 @@
     }
   }
 
+  .list-group-item .validation-error{
+    position: absolute;
+    top: 15px;
+    right: 100px;
+  }
+
+  .list-group-item .validation-error-group{
+    position: absolute;
+    top: 15px;
+    right: 136px;
+  }
+
   .no-properties {
     display: none;
   }

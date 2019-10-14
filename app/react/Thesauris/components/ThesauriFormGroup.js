@@ -35,12 +35,17 @@ export class ThesauriFormGroup extends Component {
   }
 
   render() {
-    const { value, index: groupIndex } = this.props;
+    const { value, index: groupIndex, isDuplicated } = this.props;
     return (
       <div key={`group-${groupIndex}`} className="group">
         <FormGroup>
           <Field model={`thesauri.data.values[${groupIndex}].label`}>
             <input ref={(i) => { this.groupInput = i; }} className="form-control" type="text" placeholder="Group name" />
+            {isDuplicated && (
+              <div className="validation-error validation-error-group">
+                <Icon icon="exclamation-triangle" size="xs" /> Duplicated name
+              </div>
+            )}
             <button
               tabIndex={groupIndex + 500}
               type="button"
@@ -70,7 +75,8 @@ ThesauriFormGroup.propTypes = {
   }).isRequired,
   index: PropTypes.number.isRequired,
   removeValue: PropTypes.func.isRequired,
-  onChange: PropTypes.func.isRequired
+  onChange: PropTypes.func.isRequired,
+  isDuplicated: PropTypes.bool,
 };
 
 export default ThesauriFormGroup;

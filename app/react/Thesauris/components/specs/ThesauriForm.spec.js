@@ -60,6 +60,19 @@ describe('ThesauriForm', () => {
       const renderedItem = component.instance().renderItem(props.thesauri.values[1], 1);
       expect(renderedItem).toMatchSnapshot();
     });
+
+    it('should pass isDuplicated false when unique item', () => {
+      render();
+      const renderedItem = component.instance().renderItem(props.thesauri.values[1], 1);
+      expect(renderedItem.props.isDuplicated).toBe(false);
+    });
+
+    it('should pass isDuplicated true when NOT unique item', () => {
+      props.thesauri.values.push({ label: 'Villains' });
+      render();
+      const renderedItem = component.instance().renderItem(props.thesauri.values[1], 1);
+      expect(renderedItem.props.isDuplicated).toBe(true);
+    });
   });
 
   describe('save()', () => {
@@ -242,6 +255,14 @@ describe('ThesauriForm', () => {
         expect(ThesauriForm.itemLabelDuplicated([{ label: 'label 1' }, { label: 'label 1' }, { label: 'label 1' }], { label: 'Label 1' })).toBe(true);
         expect(ThesauriForm.itemLabelDuplicated([{ label: 'label 2' }, { label: 'label 1' }, { label: 'label 1' }], { label: 'label 1' })).toBe(true);
         expect(ThesauriForm.itemLabelDuplicated([{ label: 'Label 1' }, { label: 'label 2' }, { label: 'label 1' }], { label: 'label 1' })).toBe(true);
+      });
+
+      it('should return false when the item is empty and Not unique', () => {
+        expect(ThesauriForm.itemLabelDuplicated([{ label: '' }, { label: '' }], { label: '' })).toBe(false);
+      });
+
+      it('should return false when no items', () => {
+        expect(ThesauriForm.itemLabelDuplicated(undefined, undefined)).toBe(false);
       });
     });
   });
