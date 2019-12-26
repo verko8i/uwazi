@@ -45,4 +45,18 @@ describe('Connect', () => {
     );
     expect(component).toMatchSnapshot();
   });
+
+  it('should render properly text nodes', () => {
+    const component = render(
+      <Provider store={store}>
+        <span>
+          <Connect>
+            text
+            <span>text2</span>
+          </Connect>
+        </span>
+      </Provider>
+    );
+    expect(component).toMatchSnapshot();
+  });
 });

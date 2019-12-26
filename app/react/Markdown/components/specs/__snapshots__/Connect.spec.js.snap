@@ -17,3 +17,12 @@ exports[`Connect should pass a value in the store to the child component even wh
   Zapatilla
 </span>
 `;
+
+exports[`Connect should render properly text nodes 1`] = `
+<span>
+  text
+  <span>
+    text2
+  </span>
+</span>
+`;
