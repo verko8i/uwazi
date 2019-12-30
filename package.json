@@ -52,16 +52,17 @@
     "e2e-show": "export SHOW_E2E=1; yarn e2e",
     "e2e-restore-fixtures": "cd nightmare/fixtures;./restore.sh",
     "eslint": "./node_modules/.bin/eslint app --quiet --ext js,ts,tsx",
-    "prettier": "./node_modules/.bin/prettier --loglevel warn --write --require-pragma 'app/**/*.{js,ts,tsx}'"
+    "prettier": "./node_modules/.bin/prettier --loglevel warn --write --require-pragma 'app/**/*.{js,ts,tsx}'",
+    "analyze-build": "./node_modules/.bin/webpack --profile --json > stats.json;yarn webpack-bundle-analyzer stats.json"
   },
   "dependencies": {
     "@babel/core": "7.4.4",
     "@babel/plugin-proposal-object-rest-spread": "7.5.2",
+    "@babel/plugin-syntax-dynamic-import": "^7.2.0",
     "@babel/plugin-transform-modules-commonjs": "7.5.0",
     "@babel/plugin-transform-react-constant-elements": "7.5.0",
     "@babel/plugin-transform-react-inline-elements": "7.2.0",
     "@babel/plugin-transform-typeof-symbol": "7.2.0",
-    "@babel/plugin-syntax-dynamic-import": "^7.2.0",
     "@babel/preset-env": "7.4.4",
     "@babel/preset-react": "7.0.0",
     "@babel/preset-typescript": "^7.6.0",
@@ -246,7 +247,7 @@
     "uglifyjs-webpack-plugin": "^1.2.7",
     "url-loader": "1.0.1",
     "webpack": "4.29.5",
-    "webpack-bundle-analyzer": "^2.11.1",
+    "webpack-bundle-analyzer": "3.6.0",
     "webpack-cli": "^3.3.0",
     "webpack-dev-middleware": "3.6.0",
     "webpack-hot-middleware": "^2.21.0",
