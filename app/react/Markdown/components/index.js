@@ -1,5 +1,6 @@
 /** @format */
 
+import * as recharts from 'recharts';
 import { Link } from 'react-router';
 
 import { Icon } from 'UI';
@@ -25,8 +26,13 @@ import GaugeChart from './GaugeChart';
 import Value from './Value';
 import SearchBox from './SearchBox';
 import EntityInfo from './EntityInfo';
+import ChartData from './ChartData';
+import customHookComponents from '../customHooks';
 
 export default {
+  ...recharts,
+  ...customHookComponents,
+  ChartData,
   MarkdownMedia,
   ContactForm,
   Context,

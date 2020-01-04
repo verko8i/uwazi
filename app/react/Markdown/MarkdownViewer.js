@@ -1,3 +1,5 @@
+/** @format */
+
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import rison from 'rison';
@@ -7,12 +9,17 @@ import CustomHookComponents from './CustomHooks';
 
 import markdownToReact from './markdownToReact';
 
+const Dataset = () => null;
+const placeholder = ({ children }) => children;
+
 class MarkdownViewer extends Component {
   static errorHtml(index, message) {
     return (
       <p key={index} className="error">
         <br />
-        <strong><i>Custom component markup error: unsuported values! Please check your configuration</i></strong>
+        <strong>
+          <i>Custom component markup error: unsuported values! Please check your configuration</i>
+        </strong>
         <br />
         {message}
         <br />
@@ -20,13 +27,18 @@ class MarkdownViewer extends Component {
     );
   }
 
-  static customHook(config, index) {
-    const props = rison.decode(config);
-    if (!CustomHookComponents[props.component]) {
+  static customHook(config) {
+    const params = rison.decode(config);
+    if (!CustomComponents[params.component]) {
       throw new Error('Invalid  component');
     }
-    const Element = CustomHookComponents[props.component];
-    return <Element {...props} key={index} />;
+    const props = Object.keys(params).reduce((memo, key) => {
+      if (typeof params[key] === 'string') {
+        return memo + ` ${key}="${params[key]}"`;
+      }
+      return memo + ` ${key}='{${JSON.stringify(params[key])}}'`;
+    }, '');
+    return `<${params.component}${props} />`;
   }
 
   inlineComponent(type, config, index) {
@@ -37,15 +49,20 @@ class MarkdownViewer extends Component {
     }
 
     if (type === 'link') {
-      result = <CustomComponents.MarkdownLink {...rison.decode(config)} key={index}/>;
+      const params = rison.decode(config);
+      result = `<Link url="${params.url}">${params.label}</Link>`;
     }
 
     if (type === 'searchbox') {
-      result = <CustomComponents.SearchBox {...rison.decode(config)} key={index}/>;
+      const params = rison.decode(config);
+      const props = Object.keys(params).reduce((memo, key) => {
+        return memo + ` ${key}="${params[key]}"`;
+      }, '');
+      result = `<SearchBox${props}/>`;
     }
 
     if (['vimeo', 'youtube', 'media'].includes(type)) {
-      result = <CustomComponents.MarkdownMedia key={index} config={config} compact={compact}/>;
+      result = `<MarkdownMedia config="${config}" compact={${compact}} />`;
     }
 
     if (type === 'customhook') {
@@ -58,7 +75,11 @@ class MarkdownViewer extends Component {
     try {
       if (typeof type === 'function') {
         const Element = type;
-        return <Element {...config} key={index}>{children}</Element>;
+        return (
+          <Element {...config} key={index}>
+            {children}
+          </Element>
+        );
       }
 
       if (type) {
@@ -71,9 +92,11 @@ class MarkdownViewer extends Component {
     return false;
   }
 
-  list(config, index) {
+  list() {
     const listData = this.props.lists[this.renderedLists] || {};
-    const output = <CustomComponents.ItemList key={index} link={`/library/${listData.params}`} items={listData.items} options={listData.options}/>;
+    const output = `<ItemList link="/library/${listData.params}" items='{${JSON.stringify(
+      listData.items
+    )}}' options='{${JSON.stringify(listData.options) || '{}'}}' />`;
     this.renderedLists += 1;
     return output;
   }
@@ -81,7 +104,11 @@ class MarkdownViewer extends Component {
   render() {
     this.renderedLists = 0;
 
-    const ReactFromMarkdown = markdownToReact(this.props.markdown, this.customComponent.bind(this), this.props.html);
+    const ReactFromMarkdown = markdownToReact(
+      this.props.markdown,
+      this.customComponent.bind(this),
+      this.props.html
+    );
 
     if (!ReactFromMarkdown) {
       return false;
@@ -95,14 +122,14 @@ MarkdownViewer.defaultProps = {
   lists: [],
   markdown: '',
   html: false,
-  compact: false
+  compact: false,
 };
 
 MarkdownViewer.propTypes = {
   markdown: PropTypes.string,
   lists: PropTypes.arrayOf(PropTypes.object),
   html: PropTypes.bool,
-  compact: PropTypes.bool
+  compact: PropTypes.bool,
 };
 
 export default MarkdownViewer;

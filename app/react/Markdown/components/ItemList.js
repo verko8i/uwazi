@@ -29,6 +29,8 @@ export class ItemList extends Component {
 
     let list = <RowList>{toRenderItems}</RowList>;
 
+    console.log(this.props.options);
+
     if (this.props.options.slider) {
       list = <RowList><Slider visibleCount={3}>{toRenderItems}</Slider></RowList>;
     }
