@@ -3,73 +3,10 @@
 import React from 'react';
 
 import HtmlToReact, { Parser } from 'html-to-react';
-import instanceMarkdownIt from 'markdown-it';
-import jsx from 'markdown-it-jsx';
-import mdContainer from 'markdown-it-container';
 import CustomComponents from './components';
 
 const myParser = new Parser({ xmlMode: true });
 const processNodeDefinitions = new HtmlToReact.ProcessNodeDefinitions(React);
-const customComponentMatcher = '{\\w+}\\(.+\\)\\(.+\\)|{\\w+}\\(.+\\)';
-
-const dynamicCustomContainersConfig = {
-  validate() {
-    return true;
-  },
-  render(tokens, idx) {
-    const token = tokens[idx];
-
-    if (token.type === 'container_dynamic_open') {
-      return `<div class="${token.info.trim()}">`;
-    }
-    return '</div>';
-  },
-};
-
-const markdownIt = instanceMarkdownIt({ xhtmlOut: true }).use(
-  mdContainer,
-  'dynamic',
-  dynamicCustomContainersConfig
-);
-const markdownItWithHtml = instanceMarkdownIt({ html: true, xhtmlOut: true }).use(
-  mdContainer,
-  'dynamic',
-  dynamicCustomContainersConfig
-);
-markdownItWithHtml.use(jsx);
-
-const getConfig = string => {
-  const customComponentOptionsMatcher = /{\w+}(\(.+\)\(.+\))|{\w+}(\(.+\))/g;
-  let config;
-  const configMatch = customComponentOptionsMatcher.exec(string);
-  if (configMatch) {
-    config = configMatch[1] || configMatch[2];
-  }
-
-  return config;
-};
-
-const replaceCustomComponents = (html, callback) => {
-  const matches = html.match(/{(.+)}\(.+\)/g) || [];
-  let result = html;
-  matches.forEach(match => {
-    const componentName = match.match(/{(.+)}/)[1];
-    const componentConfig = getConfig(match);
-    result = result.replace(match, callback(componentName, componentConfig), 'g');
-  });
-  return result;
-};
-
-const removeWhitespacesInsideTableTags = html =>
-  html
-    .replace(
-      /((\/)?(table|thead|tbody|tr|th|td)>)[\s\n]+(<(\/)?(table|thead|tbody|tr|th|td))/g,
-      '$1$4'
-    )
-    .replace(
-      /((\/)?(table|thead|tbody|tr|th|td)>)[\s\n]+(<(\/)?(table|thead|tbody|tr|th|td))/g,
-      '$1$4'
-    );
 
 function strToJS(str) {
   let obj = {};
@@ -122,18 +59,62 @@ const getNodeTypeAndConfig = (config, node) => {
   };
 };
 
-export default (_markdown, callback, withHtml = false) => {
-  let renderer = markdownIt;
-  if (withHtml) {
-    renderer = markdownItWithHtml;
+const RenderComponent = (type, config, index, children) => {
+  try {
+    if (typeof type === 'function') {
+      const Element = type;
+      return (
+        <Element {...config} key={index}>
+          {children}
+        </Element>
+      );
+    }
+
+    if (type) {
+      return this.inlineComponent(type, config, index);
+    }
+  } catch (error) {
+    throw error;
+    // return MarkdownViewer.errorHtml(index, error.message);
   }
 
-  const markdown = _markdown.replace(new RegExp(`(${customComponentMatcher})`, 'g'), '$1\n');
+  return false;
+};
 
-  const html = removeWhitespacesInsideTableTags(
-    renderer.render(replaceCustomComponents(markdown, callback))
-  );
+function isDescendantTableTag(parent, node) {
+  const descendants = {
+    table: ['colgroup', 'thead', 'tbody'],
+    colgroup: ['col'],
+    thead: ['tr'],
+    tbody: ['tr'],
+    tr: ['th', 'td'],
+  };
 
+  if (!parent.name || !node.name) {
+    return false;
+  }
+
+  return (descendants[parent.name] || []).indexOf(node.name) >= 0;
+}
+
+const ignoreWhitespaceBetweenTableTags = {
+  shouldProcessNode(node) {
+    if (node.type === 'text' && node.parent) {
+      if (node.next) {
+        return isDescendantTableTag(node.parent, node.next);
+      }
+      if (node.prev) {
+        return isDescendantTableTag(node.parent, node.prev);
+      }
+    }
+    return false;
+  },
+  processNode() {
+    return null;
+  },
+};
+
+const htmlToReact = html => {
   const isValidNode = node => {
     const isBadNode = node.type === 'tag' && node.name.match(/<|>/g);
     if (isBadNode) {
@@ -143,6 +124,7 @@ export default (_markdown, callback, withHtml = false) => {
   };
 
   const processingInstructions = [
+    ignoreWhitespaceBetweenTableTags,
     {
       shouldProcessNode() {
         return true;
@@ -157,7 +139,7 @@ export default (_markdown, callback, withHtml = false) => {
         }
 
         const { type, config } = getNodeTypeAndConfig(node.attribs, node);
-        const newNode = callback(type, config, index, children);
+        const newNode = RenderComponent(type, config, index, children);
 
         return newNode || processNodeDefinitions.processDefaultNode(node, children, index);
       },
@@ -166,3 +148,5 @@ export default (_markdown, callback, withHtml = false) => {
 
   return myParser.parseWithInstructions(html, isValidNode, processingInstructions);
 };
+
+export { htmlToReact };
