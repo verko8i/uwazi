@@ -1,5 +1,3 @@
-/** @format */
-
 import { actions as formActions, getModel } from 'react-redux-form';
 import superagent from 'superagent';
 
