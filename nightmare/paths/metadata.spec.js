@@ -240,7 +240,7 @@ describe('metadata path', () => {
     });
   });
 
-  fdescribe('Properties', () => {
+  describe('Properties', () => {
     const localSelectors = {
       propertiesButtons: index =>
         `#app > div.content > div > div > div.settings-content > div > div > div.panel-body > div > aside > div > ul > li:nth-child(${index}) > button`,
@@ -355,7 +355,7 @@ describe('metadata path', () => {
         .wait(localSelectors.form.text)
         .type(localSelectors.form.text, 'demo text')
         .type(localSelectors.form.numeric, '42')
-        .selectByLabel(localSelectors.form.select, 'Select...')
+        .selectByLabel(localSelectors.form.select, 'This')
         .click(localSelectors.form.multiselectOptionOne)
         .click(localSelectors.form.relationshipOptionOne)
         .selectDate(localSelectors.form.date, '08/09/1966')
@@ -386,7 +386,7 @@ describe('metadata path', () => {
         .wait(localSelectors.form.text)
         .clearInput(localSelectors.form.text)
         .clearInput(localSelectors.form.numeric)
-        .selectByLabel(localSelectors.form.select, 'This')
+        .selectByLabel(localSelectors.form.select, 'Select...')
         .click(localSelectors.form.multiselectOptionOne)
         .click(localSelectors.form.relationshipOptionOne)
         .click(localSelectors.form.emptyDate)
