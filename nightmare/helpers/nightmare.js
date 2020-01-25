@@ -32,7 +32,7 @@ export default function createNightmare(width = 1200, height = 600) {
     fail(error);
   });
 
-  nightmon('dom-ready', () => {
+  nightmare.on('dom-ready', () => {
     nightmare.inject('css', `${__dirname}/tests.css`);
   });
 
