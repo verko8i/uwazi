@@ -1,3 +1,5 @@
+/** @format */
+
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
@@ -9,32 +11,20 @@ import FiltersForm from 'app/Library/components/FiltersForm';
 import DocumentTypesList from 'app/Library/components/DocumentTypesList';
 import SidePanel from 'app/Layout/SidePanel';
 import { t } from 'app/I18N';
-import { Icon } from 'UI';
+import { LibraryButtons } from './LibraryButtons';
 
 export class LibraryFilters extends Component {
-  reset() {
-    this.props.resetFilters(this.props.storeKey);
-  }
-
   render() {
+    const { reset, storeKey } = this.props;
     return (
-      <SidePanel className="library-filters" open={this.props.open}>
-        <div className="sidepanel-footer">
-          <span onClick={this.reset.bind(this)} className="btn btn-primary">
-            <Icon icon="sync" />
-            <span className="btn-label">{t('System', 'Reset')}</span>
-          </span>
-          <button type="submit" form="filtersForm" className="btn btn-success">
-            <Icon icon="search" />
-            <span className="btn-label">{t('System', 'Search')}</span>
-          </button>
-        </div>
+      <SidePanel className="library-filters " open={this.props.open}>
+        <LibraryButtons reset={reset} storeKey={storeKey} />
         <div className="sidepanel-body">
           <p className="sidepanel-title">{t('System', 'Filters configuration')}</p>
           <div className="documentTypes-selector nested-selector">
-            <DocumentTypesList storeKey={this.props.storeKey}/>
+            <DocumentTypesList storeKey={this.props.storeKey} />
           </div>
-          <FiltersForm storeKey={this.props.storeKey}/>
+          <FiltersForm storeKey={this.props.storeKey} />
         </div>
       </SidePanel>
     );
@@ -42,19 +32,24 @@ export class LibraryFilters extends Component {
 }
 
 LibraryFilters.propTypes = {
-  resetFilters: PropTypes.func,
-  open: PropTypes.bool,
-  storeKey: PropTypes.string
+  reset: PropTypes.func.isRequired,
+  open: PropTypes.bool.isRequired,
+  storeKey: PropTypes.string.isRequired,
 };
 
 export function mapStateToProps(state, props) {
   return {
-    open: state[props.storeKey].ui.get('filtersPanel') !== false && !state[props.storeKey].ui.get('selectedDocuments').size > 0
+    open:
+      state[props.storeKey].ui.get('filtersPanel') !== false &&
+      !state[props.storeKey].ui.get('selectedDocuments').size > 0,
   };
 }
 
 function mapDispatchToProps(dispatch, props) {
-  return bindActionCreators({ resetFilters }, wrapDispatch(dispatch, props.storeKey));
+  return bindActionCreators({ reset: resetFilters }, wrapDispatch(dispatch, props.storeKey));
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(LibraryFilters);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(LibraryFilters);
