@@ -1,3 +1,25 @@
+# Customize the interface
+
+You can add your own CSSs and assets to customize Uwazi as much as the CSSs and layout allow. Some examples:
+
+<img src="https://github.com/huridocs/uwazi-assets/blob/master/wiki/screenshots/customization-cejil.png" width="600" /> 
+
+
+
+<img src="https://github.com/huridocs/uwazi-assets/blob/master/wiki/screenshots/customization-zorlakay.png" width="600" />
+
+
+
+In order to add your own CSS and assets, access the customization screens via settings > collection:
+
+![Settings > collection](https://github.com/huridocs/uwazi-assets/blob/master/wiki/screenshots/customization-buttons.png)
+
+![Customize CSS](https://github.com/huridocs/uwazi-assets/blob/master/wiki/screenshots/customization-css.png)
+
+![Uplaod assets](https://github.com/huridocs/uwazi-assets/blob/master/wiki/screenshots/customization-assets.png)
+
+# Data visualization components
+
 You can add graphs and other data visualization elements to pages and rich text fields.
 
 ## Search Box
@@ -68,15 +90,15 @@ Context is used for pulling out translations for the labels. This value is the i
 You can find these values via the api: https://your_uwazi_url/api/templates. ie, for a thesauri based property (selects and multiselects), it looks like: (Depending on your browser, you may need to install a JSON viewer extension) 
 
 ```
-id	"cb273227-0e0b-44e1-98e5-6c88fb0e7ed1"
-name	"property_name"
-filter	true
-showInCard	true
-content	"58cf1c10f53d6d50ab7494d3"
-type	"multiselect"
-label	"Property name"
-_id	"58d070f2f53d6d50ab749607"
-nestedProperties	[]
+id    "cb273227-0e0b-44e1-98e5-6c88fb0e7ed1"
+name    "property_name"
+filter    true
+showInCard    true
+content    "58cf1c10f53d6d50ab7494d3"
+type    "multiselect"
+label    "Property name"
+_id    "58d070f2f53d6d50ab749607"
+nestedProperties    []
 ```
 In this case, the context we are looking for is "58cf1c10f53d6d50ab7494d3" (content).
 
@@ -228,3 +250,27 @@ Right now EntityLink is a very basic component, that expects an Entity object in
 ```
 
 Another option is to adopt the philosophy that new components that we develop for the pages are aware of the context and can grab values directly, but this won't work with already existing components in Uwazi, or be able to use these new components like EntityLink in other parts of Uwazi that are not pages.
+
+# Geolocation
+
+Uwazi supports geolocation of entities and documents. When the database has entities with geolocation properties, the map toggle button will appear as an option in Uwazi's library:
+
+![Geolocation overview](https://github.com/huridocs/uwazi-assets/blob/master/wiki/screenshots/geolocation-overview.png)
+
+Filters and searches can be used to narrow down pins in the map. Users can toggle between map and card list view.
+
+The map will automatically group pins in clusters. Clicking on a cluster will get us a list of the included geolocated entities:
+
+![Clicking on a cluster](https://github.com/huridocs/uwazi-assets/blob/master/wiki/screenshots/geolocation-cluster-click.png) 
+
+Clicking on a map ping, or one of the results in the cluster, will display the entity details:
+
+![Entity details](https://github.com/huridocs/uwazi-assets/blob/master/wiki/screenshots/geolocation-entity-details.png)
+
+Configuring gelocation involves a simple step. In order to add a geolocation field to an entity or document, drag and drop the field type in the templates configuration:
+
+![Adding a geolocation field](https://github.com/huridocs/uwazi-assets/blob/master/wiki/screenshots/geolocation-settings.png)
+
+This will enable a geolocation field. Values can be set via map click or manually introducing the coordinates:
+
+![Edit geolocation field](https://github.com/huridocs/uwazi-assets/blob/master/wiki/screenshots/geolocation-edit.png)
