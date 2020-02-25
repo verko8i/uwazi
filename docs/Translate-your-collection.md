@@ -1,4 +1,5 @@
-# Manage languages
+# Translate your collection
+## Manage languages
 
 Administrators can configure the available languages in settings > languages:
 
@@ -16,7 +17,7 @@ If your language is not in the list, please get in touch with us.
 
 Refer to the "Translate your collection" section of this Wiki to get more information.
 
-## Some notes on the Uwazi's internationalization model
+### Some notes on the Uwazi's internationalization model
 
 When a user uploads a document or creates an entity, a copy of this information will be added to the other available languages. In order to have that piece of information translated, users must switch languages and update the information in the other languages. If the translation is not provided, the information will be displayed in the language it was uploaded regardless of the language the user is working on.
 
@@ -28,13 +29,13 @@ Table of contents is also synced as long as we are using the same source documen
 
 Text references, media and text fields (text and rich text), are not synced across languages on edition. But they are synced along with the rest of properties on creation: when initially uploading a document or creating an entity, all the metadata added before hitting save for the first time will be copied to the other languages. Further editions won't update the not synchronizable fields.
 
-# How to translate content
+## How to translate content
 
-## Which content can you translate?
+### Which content can you translate?
 
 All the content inside Uwazi can be translated to any language you want. There are different ways to translate content (depending on what you want to have translated) but basically they are divided into two main groups:
 
-### Uwazi Interface
+#### Uwazi Interface
 
 The Uwazi Interface (also called "System") contains all translations for every component you see in the application: buttons, alerts, messages... 
 
@@ -42,7 +43,7 @@ As an open source tool, we aim collaboration and personalization on those transl
 
 For more information you can review our [guide to translate the interface](https://github.com/huridocs/uwazi/wiki/Translate-the-interface).
 
-### Your content
+#### Your content
 
 Every document you upload, entity you create, property or thesauri you add is also translatable.
 
@@ -52,7 +53,7 @@ Check our [guide to translate documents](https://github.com/huridocs/uwazi/wiki/
 
 ![translate](http://huridocs.github.io/uwazi-assets/wiki/screenshots/translate-context.png)
 
-## Our translation methodology
+### Our translation methodology
 
 The Uwazi translation system works with a methodology called **fallback**. A fallback refers to an alternative document if the main (or intended) one is not available.
 
@@ -76,11 +77,11 @@ Pros:
 Con:
 - Because the fallback approach shares documents through different languages, users may find a document written in a language different from the interface you are navigating.
 
-# Additional notes
+## Additional notes
 * As from version 1.4 (November 2018), you can add languages yourself - see https://github.com/huridocs/uwazi/wiki/Manage-languages
 * When languages are enabled, you will see the language abbreviation in the top right corner of the site.
 
-# Upload translated documents
+## Upload translated documents
 
 This guide tackles one of the main aspect of translations in Uwazi: **how to upload a translated document into the system**. You can also check [how to translate metadata, properties, thesaurus...](https://github.com/huridocs/uwazi/wiki/Translate-document-metadata-and-filters) or [how to translate the interface](https://github.com/huridocs/uwazi/wiki/Translate-the-interface).
 
@@ -100,7 +101,7 @@ Once you confirm the upload, and after some seconds of waiting, your new documen
 
 ![translate](http://huridocs.github.io/uwazi-assets/wiki/screenshots/translate-translated.png)
 
-# Translate metadata and filters
+## Translate metadata and filters
 
 This guide tackles one of the main aspect of translations in Uwazi: **how to translate document metadata and filters**. You can also check [how to upload translated documents...](https://github.com/huridocs/uwazi/wiki/Upload-translated-documents) or [how to translate the interface](https://github.com/huridocs/uwazi/wiki/Translate-the-interface).
 
@@ -124,7 +125,7 @@ All this content can also be translate easily in Settings.
 
 Note: The *base phrase* and the English phrase are usually the same, but you can freely modify the English one in case you found another phrase that suits better with your way of communication.
 
-# Translate the interface
+## Translate the interface
 
 This guide tackles one of the main aspect of translations in Uwazi: **how to translate the Uwazi interface**. You can also check how to [translate metadata, properties, thesaurus...](https://github.com/huridocs/uwazi/wiki/Translate-document-metadata-and-filters) or [how to upload translated documents](https://github.com/huridocs/uwazi/wiki/Upload-translated-documents).
 
@@ -146,7 +147,7 @@ In Settings you can translate all the interface of your Uwazi site, such as butt
 
 Note: The *base phrase* and the English phrase are usually the same, but you can freely modify the English one in case you found another phrase that suits better with your way of communication.
 
-## Live translation
+### Live translation
 
 Its also possible to translate UI labels while navigating an Uwazi instance. While logged in as admin, click  on the translations toggle in the top bar besides the language links:
 

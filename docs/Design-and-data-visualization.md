@@ -1,4 +1,5 @@
-# Customize the interface
+# Design and data visualization
+## Customize the interface
 
 You can add your own CSSs and assets to customize Uwazi as much as the CSSs and layout allow. Some examples:
 
@@ -18,11 +19,11 @@ In order to add your own CSS and assets, access the customization screens via se
 
 ![Uplaod assets](https://github.com/huridocs/uwazi-assets/blob/master/wiki/screenshots/customization-assets.png)
 
-# Data visualization components
+## Data visualization components
 
 You can add graphs and other data visualization elements to pages and rich text fields.
 
-## Search Box
+### Search Box
 
 This code snippet added to any page or rich text field, will render a search box that will run queries on your collections of documents:
 
@@ -33,7 +34,7 @@ This code snippet added to any page or rich text field, will render a search box
 Such as:
 ![Component search box](https://github.com/huridocs/uwazi-assets/blob/master/wiki/screenshots/component-search-box.png)
 
-## Counter
+### Counter
 ```
 <Dataset />
 <div className="home-bullet">
@@ -76,7 +77,7 @@ Obtaining the actual value id requires knowledge of which value represents each 
 
 The rest of the code is regular HTML than can be tweaked via [CSS customization](https://github.com/huridocs/uwazi/wiki/Customize-the-interface)
 
-## Bar chart
+### Bar chart
 ```
 <BarChart property="nigerian_state" context="59d25ff4d841d62ab6858184" />
 ```
@@ -102,7 +103,7 @@ nestedProperties    []
 ```
 In this case, the context we are looking for is "58cf1c10f53d6d50ab7494d3" (content).
 
-## Pie chart / List chart
+### Pie chart / List chart
 
 As other similar components, the PieChart and ListChart components require a Dataset component to feed the correct data.
 
@@ -163,7 +164,7 @@ Will render:
 
 ![Styled Pie chart](https://github.com/huridocs/uwazi-assets/blob/master/wiki/screenshots/component-pie-chart-styled.png)
 
-## Card list
+### Card list
 
 ```
 {list}(https://your_uwazi_url/en/library/?q=(order:desc,sort:creationDate))(limit:3)
@@ -173,7 +174,7 @@ Renders:
 
 This syntax will display an arbitrary number of cards, defined by the param "limit", based on a library query URL.
 
-## Map
+### Map
 
 ```
 <Dataset geolocation="true" />
@@ -187,7 +188,7 @@ The map component requires a dataset with geolocation data in order to work prop
 
 Clicking on individual or cluster markers in the map will open a side panel with more information about the selected items.
 
-## EntityInfo
+### EntityInfo
 
 ```
 <EntityInfo entity="entitySharedId" tag="div" classname="classes">More Info</EntityInfo>
@@ -199,7 +200,7 @@ Creates an HTML element of the type described in tag ("div" is default and can b
 
 Alpha stage of new components:
 
-### Query component:
+#### Query component:
 This component allows you to do API request to fetch data you may need and expose it in a react [context](https://reactjs.org/docs/context.html) for that page, for example:
 
 ```
@@ -208,7 +209,7 @@ This component allows you to do API request to fetch data you may need and expos
 
 Will search for the last 10 entities created and will store them in the "entities" dataset to be consumed. You can access this dataset with `Value` or `Repeat` for example.
 
-### Value component:
+#### Value component:
 This component prints the value in a given path of the context . For example:
 ```
 <Query name="entities" url="search?limit=10&order=desc&sort=creationDate"/>
@@ -216,7 +217,7 @@ This component prints the value in a given path of the context . For example:
 ```
 This example will request 10 entities and then print the title of the first one.
 
-### Repeat component:
+#### Repeat component:
 The purpose of this component is to iterate over data in the context and print his contents for each entry, for example:
 
 ```
@@ -228,7 +229,7 @@ The purpose of this component is to iterate over data in the context and print h
 </ul>
 ```
 
-### EntityLink component:
+#### EntityLink component:
 This component will generate a link to the correct entity viewer based on a given entity property.
 ```
 <Query name="entities" url="search?limit=10&order=desc&sort=creationDate"/>
@@ -241,7 +242,7 @@ This component will generate a link to the correct entity viewer based on a give
 </ul>
 ```
 
-### EntityLink implementation:
+#### EntityLink implementation:
 
 Right now EntityLink is a very basic component, that expects an Entity object in the property key "entity" to generate a Link to that Entity. Because of this reason, when used in the Pages it needs to be wrapped in a Value component that is connected to the context and passes the entity down, like in the example:
 
@@ -251,7 +252,7 @@ Right now EntityLink is a very basic component, that expects an Entity object in
 
 Another option is to adopt the philosophy that new components that we develop for the pages are aware of the context and can grab values directly, but this won't work with already existing components in Uwazi, or be able to use these new components like EntityLink in other parts of Uwazi that are not pages.
 
-# Geolocation
+## Geolocation
 
 Uwazi supports geolocation of entities and documents. When the database has entities with geolocation properties, the map toggle button will appear as an option in Uwazi's library:
 

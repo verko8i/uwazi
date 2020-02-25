@@ -1,4 +1,5 @@
-# Search
+# Search and filter your collection
+## Search
 
 A simple way to search documents or entities in your collection is using the **Search box** on the top left side of your screen. 
 
@@ -24,7 +25,7 @@ Click on a page number and you will see your search query highlighted in the bod
 
 ![Search results](http://huridocs.github.io/uwazi-assets/wiki/screenshots/Search_document_result2.png)
 
-## Query string searches
+### Query string searches
 
 You can now search for specific info using wildcards, boolean search and query strings.
 
@@ -42,7 +43,7 @@ You can now search for specific info using wildcards, boolean search and query s
 
 Please refer to ElasticSearch's the [query string syntax page](https://www.elastic.co/guide/en/elasticsearch/reference/5.5/query-dsl-query-string-query.html#query-string-syntax) for more information on search options.
 
-# Filters
+## Filters
 
 Filters are a great way to manage your collection of documents based on the properties assigned to each document or entity.
 
@@ -60,7 +61,7 @@ Note: When you filter the documents using more than one document or entity type,
 
 ![Filters with common properties](http://huridocs.github.io/uwazi-assets/wiki/screenshots/filters-common.png)
 
-## AND/OR toggle
+### AND/OR toggle
 
 Users can toggle between using an AND operator for the filter or using the OR operator. 
 Using the AND operator will display the documents or entities that contain all the properties for which you are filtering. 

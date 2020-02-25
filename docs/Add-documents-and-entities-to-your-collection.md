@@ -1,6 +1,7 @@
-# Upload and publish documents
+# Add documents and entities to your collection
+## Upload and publish documents
 
-## Upload your documents
+### Upload your documents
 
 At this time, Uwazi supports PDF format only as source of text, enabling all tools for working with text such as full-text search, tables of contents, text references and others.
 
@@ -20,7 +21,7 @@ You can either drag and drop your PDF files into the designated box, or you can 
 
 Your files will be added to the upload section of Uwazi, but they will not be published until you assign a template and click _publish_ (see below).
 
-## Publish your documents
+### Publish your documents
 
 Before you publish your documents, you need to assign a template to them (and preferably some metadata as well). To do that you can select one document, make your edits in the right sidebar, and then click _save_.
 
@@ -30,18 +31,18 @@ When you are finished adding properties to your unpublished documents, you can p
 
 ![Publish](https://github.com/huridocs/uwazi-assets/blob/master/wiki/screenshots/bulk-publish.png)
 
-# Import CSV
+## Import CSV
 
-## Migration of databases to Uwazi using CSV files
+### Migration of databases to Uwazi using CSV files
 
-### Preparation for Import
+#### Preparation for Import
 
 It is useful to create a list (separate from the CSV file) of templates/formats that are to be migrated, mentioning type of field and name of field in Uwazi.
 
 To import a CSV file, click on the "Private documents" icon and then "Import".
 ![](https://github.com/huridocs/uwazi-assets/blob/master/wiki/screenshots/import-csv-button.png)
 
-### Guidelines and Conventions
+#### Guidelines and Conventions
 
 1. Use CSV (comma separated values) file rather than XLS or XLSX (Excel) files – CSV files are easier for Uwazi to parse.
 1. Migration works with matching names – therefore, one should create a structure in Uwazi with the same field names as the column headers in the CSV file. For field names one can use either lower case or capitals. It is always possible to rename fields in Uwazi after import.
@@ -60,14 +61,14 @@ To import a CSV file, click on the "Private documents" icon and then "Import".
 1. Attachments can be imported as a ZIP file of PDFs. There should be a CSV file with the title of the record to which the attachment is to be linked and the name of the file.
 1. A feature that is not yet supported is multiple dates within one field.
 
-### Related issues:
+#### Related issues:
 
 * A feature under development is export of structure and export of all data.
 * Another feature is importing only thesauri as documented on https://github.com/huridocs/uwazi/wiki/Import-thesauri-from-CSV. This will also allow to import terminology lists in different languages. HURIDOCS has developed 48 micro-thesauri for the documentation of human rights violations. They are available in several languages as CSV files, see https://www.huridocs.org/resource/micro-thesauri/.
 * Different fields in Uwazi can be linked to the same thesaurus.
 * For exceptional situations occurring in particular instances we seek to make “work arounds” rather than new features which take more time.
 
-# Create entities
+## Create entities
 
 In Uwazi, you may want to create entities in order to include a people, events, courts, or cases in your collection.
 
@@ -83,9 +84,9 @@ Give the entity a title, indicate the type of entity and other characteristics.
 
 Then click the _save_ button in the bottom right corner of the site.
 
-# Working with video and audio
+## Working with video and audio
 
-## Image and media fields
+### Image and media fields
 
 Uwazi supports several embedded and native media types including: YouTube, FaceBook, SoundCloud, Streamable, Vidme, Vimeo, Wistia, Twitch, DailyMotion, mp3, mp4, wave, and others. This is achieved via integration with  [React-player](https://www.npmjs.com/package/react-player), supporting all features this component provides.
 
@@ -100,11 +101,11 @@ These fields support several visualization options:
 - Show in cards: media will be displayed in cards.
 - Style, being either "Fit" will show the entire media inside the container or "Fill" will attempt to fill the container, using it's entire width. In cards, cropping is likely to occur.
 
-### Uploading you own media files
+#### Uploading you own media files
 
 If you don't want to use an external service (ie. YouTube), you can upload and display the files in Uwazi directly. To do so, add your file as an attachment to an entity, copy the URL provided by Uwazi after the upload its completed and use it in a media or markdown field.
 
-## Embedding media into rich text fields
+### Embedding media into rich text fields
 
 In order to embed a media file, add a rich text field to a document or entity and use the following syntax:
 ```

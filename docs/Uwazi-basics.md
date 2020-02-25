@@ -1,4 +1,10 @@
-# Glossary of terms
+# Uwazi basics
+## Contents
+
+* (Glossary of terms)[#glossary-of-terms]
+* (History of Uwazi)[#history-of-uwazi]
+
+## Glossary of terms
 
 * **Activity log** - A section within the Uwazi configuration menu where the activities of the users are registered for monitoring purposes. 
 * **Components** - Data visualisation and search elements that can be added to an Uwazi instance into pages and rich text fields.
@@ -9,7 +15,7 @@
 * **Connection** - A simple field that connects _documents_ or _entities_ to each other with a label. 
 * **Reference** - A bookmark that connects selected content in a document to something. This _something_ can be: other selected content in the same document, other selected content in another document, an entire document, or an entity. 
 
-# History of Uwazi
+## History of Uwazi
 
 In 2010, HURIDOCS partnered with the Institute for Human Rights and Development in Africa (IHRDA) to develop the African Case Law Analyser. This website greatly improves access to human rights case law of African human rights regional bodies. The African Case Law Analyser addressed an enormous problem that we see in many regions – that access to human rights jurisprudence is almost impossible to obtain, hindering the work of human rights defenders, journalists and lawyers. In 2017, HURIDOCS and the Center for Justice and International Law (CEJIL)  launched SUMMA - a Case Law Analyser for the Americas, to provide access to the Inter-American Court and Commission cases. 
 

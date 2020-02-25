@@ -1,4 +1,5 @@
-# Open and view a document
+# Organise your collection
+## Open and view a document
 
 In the library section, you will find your entire document collection. Each document or entity will be displayed in this library as a _card_. To open and view the full document, you can either:
 
@@ -10,7 +11,7 @@ or, click on the card to open the right side panel and then click on the _docume
 
 ![Open side bar and click view](https://raw.githubusercontent.com/huridocs/uwazi-assets/master/wiki/screenshots/open_sidepanel.png)
 
-# Apply properties
+## Apply properties
 
 In the library section, you will find your entire document collection. Each document or entity will be displayed in this library as a _card_. To open and view the full document, you can either:
 
@@ -22,7 +23,7 @@ or, click on the card to open the right side panel and then click on the _docume
 
 ![Open side bar and click view](https://raw.githubusercontent.com/huridocs/uwazi-assets/master/wiki/screenshots/open_sidepanel.png)
 
-# Create connections
+## Create connections
 
 Connections allow you to link up two documents or entities without any hierarchical structure. You just select one of them, click on connect and the link is made.
 
@@ -47,11 +48,11 @@ Also you can view the connections on an entity clicking on the **Connections** t
 
 ![Display entity relationships](http://g.recordit.co/2yb85Zop9N.gif)
 
-# Create a table of contents
+## Create a table of contents
 
 Most documents have a defined structure through the pages. With a **Table of contents**, you will be able to reproduce this structure on the right panel and allow user quickly navigate through the document content. Alternatively, you can create your own structure that would be most useful to your users. 
 
-## Follow these steps:
+### Follow these steps:
 
 Select the text and click on _Add to table of contents_.
 
@@ -72,13 +73,13 @@ We support 6 levels of indentation with different styles for every level to impr
 
 ![Toc indent levels](http://huridocs.github.io/uwazi-assets/wiki/screenshots/toc-indent-levels.png)
 
-# Connect your data in meaningful ways using relationships
+## Connect your data in meaningful ways using relationships
 
 Uwazi supports connecting data in unstructured ways, meaning you don't need to follow a particular data structure or predefine a relational model upfront. Both entities and documents can be connected to each other in one-to-one or one-to-many relations arbitrarily:
 
 ![](https://github.com/huridocs/uwazi-assets/blob/master/wiki/screenshots/relationships-overview.png)
 
-## Information hubs
+### Information hubs
 
 Uwazi relationships support information hubs, that is, a concentrator that holds together a series of documents or entities. Hubs are useful for telling apart mixed information. Ie. a person may be related to two different legal cases but you want that information segregated:
 
@@ -88,13 +89,13 @@ A hub denotes relationships that, not only make sense to have grouped, but that 
 
 So, if document A has a hub with documents B and C, then a relationship would be inferred between B and C also. Not only inferred but it actually exists. On the other hand, if you have document A with one hub to B and another hub to C, then B and C will have NO relationship between each other.
 
-## Creating connections
+### Creating connections
 
 You can create and edit relationships by clicking on the "Edit" button at the bottom of the page. After adding, removing or renaming the connected entities or documents, click on save to store your changes:
 
 ![](https://github.com/huridocs/uwazi-assets/blob/master/wiki/screenshots/relationships-edition.png)
 
-## Relationship fields in templates
+### Relationship fields in templates
 
 Former select and multiselect fields that used an entity template as options, have been replaced with a relationship field. This is a preconfigured relationship type with some advantages:
 
@@ -128,23 +129,23 @@ Also, you can configure this field as the rest of the metadata fields:
 - Use as filter: this relationship can be filtered in the library.
 - Default filter: this filter will be shown regardless of document and entity types being selected.
 
-## Working with hubs
+### Working with hubs
 
 You can move relationships between hubs to make sure you data is properly grouped. When in relationships view, hit the "Edit" button and use the available controls to configure your connections:
 
 ![Editing hubs](https://github.com/huridocs/uwazi-assets/blob/master/wiki/screenshots/relationships-edit-hubs.png)
 
-## Text references in relationship view
+### Text references in relationship view
 
 Text references are also rendered in relationships view:
 
 ![Text references in relationships](https://github.com/huridocs/uwazi-assets/blob/master/wiki/screenshots/relationships-text-references.png)
 
-# Create references
+## Create references
 
 In Uwazi, a reference is a bookmark that connects selected content in a document to something. This _something_ can be: other selected content in the same document, other selected content in another document, an entire document, or an entity. 
 
-## Reference specific text in a document
+### Reference specific text in a document
 
 1. [Open and view the document or entity](https://github.com/huridocs/uwazi/wiki/Open-and-view-a-document)
 2. Select the text and click on _Connect to paragraph_
@@ -155,7 +156,7 @@ Users will see this referenced text under the _References_ tab in the right side
 
 ![Reference text](http://g.recordit.co/QDzjvoqjrD.gif)
 
-## Reference an entire document or entity
+### Reference an entire document or entity
 
 1. [Open and view the document or entity](https://github.com/huridocs/uwazi/wiki/Open-and-view-a-document)
 2. Select the text and click on _Connect to document_
@@ -166,7 +167,7 @@ Users will see this referenced text or document/entity under the _References_ ta
 
 ![Reference an entire document or entity](http://g.recordit.co/CkfOkyrTAs.gif)
 
-# Upload files to a document or entity
+## Upload files to a document or entity
 
 To upload a file to a document/entity:
 * open the document/entity

@@ -1,4 +1,5 @@
-# Data synchronization
+# Data federation
+## Data synchronization
 
 With Uwazi, you can share data between two or more instances. This feature is experimental and has no UI access to it yet, so you need some technical skills to activate data-sync.
 
@@ -17,7 +18,7 @@ It has some rules and limitations:
 - Not everything is synced, only entities, thesauri and relationships. Pages, menus and other configs are independent to each Uwazi.
 
 
-## Configuration
+### Configuration
 
 The host or "Master" database needs to be modified.  The **settings** collection of the MongoDB database should have a single document.  Edit that document to hold a new key named "**sync**" (please, be careful not to modify or delete any of the existing keys, ie: filters, links, languages, etc.).
 
@@ -48,7 +49,7 @@ In order for this to work, you need to:
 
 Please remember that this feature is at an experimental or beta stage.
 
-# API frequently asked questions
+## API frequently asked questions
 
 You can access the API for your Uwazi instance by adding _/api_ to the end of your URL, like this: 
 https://yourinstancename.uwazi.io/api
@@ -61,7 +62,7 @@ For example, you can look at the available API calls for https://demo.uwazi.io/a
 
 This is a work-in-progress so we will continue to add and improve on this. 
 
-## Frequently asked questions
+### Frequently asked questions
 
 **1. Do you have an authorisation mechanism?**
 

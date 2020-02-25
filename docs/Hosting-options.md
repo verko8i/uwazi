@@ -1,4 +1,5 @@
-# Install Uwazi on your server
+# Hosting options
+## Install Uwazi on your server
 
 You can download the latest version of Uwazi here on [Github](https://github.com/huridocs/uwazi/releases). Be sure you have everything configured on your server first - here is a [list of Uwazi's dependencies](https://github.com/huridocs/uwazi/blob/development/README.md).  
 
@@ -55,7 +56,7 @@ You don't need to keep your Uwazi code along with your user data, meaning that b
 
 **Note on enabling HTTPS** the best to do this at the moment is by using a reverse-proxy (ie. Nginx) while activating LOCALHOST_ONLY in the configuration.
 
-# Host Uwazi with HURIDOCS
+## Host Uwazi with HURIDOCS
 
 HURIDOCS can provide hosting services to human rights organisations who do not have technical capacity to securely host and maintain Uwazi themselves, or who prefer to outsource it. Description of our hosting service:
 * Automatic installation of upgrades with new features and patches.
@@ -66,14 +67,14 @@ HURIDOCS can provide hosting services to human rights organisations who do not h
 
 [Contact the Uwazi team](http://www.uwazi.io/) if you would like us to host an Uwazi instance for you.
 
-# Backup and restore
+## Backup and restore
 
 Backup and restoring operations are performed manually. 
 
-### Backup
+#### Backup
 In order to have a full backup of your data, all you need to do is dump the whole collection in MongoDB, and keep a copy of everything contained in the "uploaded_documents" folder.
 
-### Restore
+#### Restore
 
 Follow these steps in a fresh Uwazi install:
 

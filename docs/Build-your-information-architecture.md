@@ -1,4 +1,6 @@
-# Create templates
+
+# Build your information architecture
+## Create templates
 
 Templates allow you to attribute structured, consistent metadata to your entities. Within each Template, you can assign properties:
 * text 
@@ -17,7 +19,7 @@ For example, you may want to create a template called "Court" which will contain
 
 Under _Templates_, you can view, edit, and delete existing templates. 
 
-## Follow these steps:
+### Follow these steps:
 
 1. Click on the gear icon in the top right corner of the site.
 
@@ -38,7 +40,7 @@ Note:
 
 2. When you add a **select** or **multi-select property** to a type, you will see a field titled _Thesauri_ in which you can select a _Thesaurus_ or a _Template_ that you have already created. See the section on [create thesauri](https://github.com/huridocs/uwazi/wiki/Create-thesauri) for more information on how to create these thesauri. 
 
-# Create thesauri
+## Create thesauri
 
 A thesaurus in Uwazi is a list of terms that you will reference in the properties. 
 
@@ -48,7 +50,7 @@ You can use the same thesauri across the templates by calling a thesaurus from a
 
 You can view, edit and delete your existing thesauri by going to _Thesauri_.
 
-## Follow these steps:
+### Follow these steps:
 
 1. Click on the gear icon in the top right corner of the site.
 
@@ -62,7 +64,7 @@ You can view, edit and delete your existing thesauri by going to _Thesauri_.
 
 ![new thesaurus](https://raw.githubusercontent.com/huridocs/uwazi-assets/master/wiki/screenshots/dictionaries.jpg)
 
-## Nested options in thesauri
+### Nested options in thesauri
 
 For big thesauri, grouping values in groups makes information more accessible. In the thesauri creation interface, there is a "Create group" at the bottom action buttons and some controls to move items around:
 
@@ -72,17 +74,17 @@ Which gets render as a filter:
 
 ![Multi-select filter with nesting](https://github.com/huridocs/uwazi-assets/blob/master/wiki/screenshots/thesauri-nested-filter.png)
 
-## Importing thesauri to Uwazi from CSV files
+### Importing thesauri to Uwazi from CSV files
 
 This feature allows you to import terminology lists in different languages from a CSV file into an Uwazi thesaurus. You can import data into an a new or existing thesaurus.
 
 Check this link https://github.com/huridocs/uwazi/wiki/Import-thesauri-from-CSV for more details and a guide on how to.
 
-# Importing thesauri to Uwazi from CSV files
+## Importing thesauri to Uwazi from CSV files
 
 This feature allows you to import terminology lists in different languages from a CSV file into an Uwazi thesaurus. You can import data into an a new or existing thesaurus.
 
-## Preparing the CSV file
+### Preparing the CSV file
 
 The CSV file should have a separate column for each language you want to import, the language should be used as the name of the column. Each row contains a term and its translations in different languages.
 
@@ -98,7 +100,7 @@ Here's the same file viewed in a spreadsheet program:
 
 ![Sample spreadsheet](https://github.com/huridocs/uwazi-assets/blob/master/wiki/screenshots/import-thesaurus-sample-spreadsheet.png?raw=true)
 
-## Importing data into an existing thesaurus
+### Importing data into an existing thesaurus
 
 Go to "Account settings", then "Thesauri", then select the thesaurus you want to add data to. At the bottom, you will see an import button
 
@@ -107,29 +109,29 @@ When you click the button, you'll be prompted to select the csv button to import
 ![Import thesaurus form](https://github.com/huridocs/uwazi-assets/blob/master/wiki/screenshots/import-thesaurus-form.png?raw=true)
 
 
-## Importing data into in a new thesaurus
+### Importing data into in a new thesaurus
 
 Go to "Account settings", then "Thesauri", the click the "Add thesaurus" button at the bottom of the page. Give the thesaurus a name and click the import button.
 
 To see the newly imported thesauri, go to "Account settings", then "Translations". Select the thesauri you imported which will then display for all the languages imported. 
 
-## HURIDOCS micro-thesauri
+### HURIDOCS micro-thesauri
 
 HURIDOCS has developed 48 micro-thesauri for the documentation of human rights violations. They are available in several languages as CSV files, see https://www.huridocs.org/resource/micro-thesauri/.
 
 
-## Notes
+### Notes
 
 - You do not have to include all the languages in your Uwazi instance in the CSV file
 - If your CSV file has columns for languages that are not enabled in your Uwazi instance, they will be ignored
 - Your CSV file should not have rows with duplicate values in the same column, this will cause a validation error
 - The import feature does not support Excel file formats, only CSV files are support. However, you can create a CSV file from your spreadsheet data when saving or downloading the file from your spreadsheet program.
 
-# Name connections
+## Name connections
 
 A connection is something that links two pieces of information in your collection. It could link a paragraph to a document, or a word to an entity. 
 
-## Follow these steps:
+### Follow these steps:
 
 1. Click on the gear icon in the top right corner of the site.
 

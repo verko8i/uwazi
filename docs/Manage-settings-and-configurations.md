@@ -1,8 +1,9 @@
-# Edit your account information
+# Manage settings and configurations
+## Edit your account information
 
 Under **Settings**, you can edit your account information.
 
-## To change your email address or password within Uwazi
+### To change your email address or password within Uwazi
 
 1. Click on the gear icon in the top right corner of the site
 
@@ -13,11 +14,11 @@ Under **Settings**, you can edit your account information.
 <img src="https://raw.githubusercontent.com/huridocs/uwazi-assets/master/wiki/screenshots/account.jpg" width="800" height="400">
 
 
-## To recover a new password if you are locked out
+### To recover a new password if you are locked out
 
 <img src="https://user-images.githubusercontent.com/56067374/72874751-019ce380-3cf3-11ea-812f-c0d23e464694.png" width="600" height="400">
 
-# Manage users
+## Manage users
 
 If you work on a team or in collaboration with other people, Uwazi allows you to create users with specific permissions to help you update your collection of documents.
 
@@ -71,7 +72,7 @@ If you are using a local IP, for an intranet installation, then use something li
 
 ![New user](http://huridocs.github.io/uwazi-assets/wiki/screenshots/users-new.png)
 
-# Edit your site information
+## Edit your site information
 
 In your settings, you can edit your site information such as: the name of your site and the homepage.
 
@@ -83,10 +84,10 @@ In your settings, you can edit your site information such as: the name of your s
 
 ![Site info](https://raw.githubusercontent.com/huridocs/uwazi-assets/master/wiki/screenshots/collection.jpg)
 
-# Name
+## Name
 This is easy: your collection name :)
 
-# Landing page
+## Landing page
 The landing page is the first thing users will see when visiting your Uwazi instance. By default, your landing page is the Library, without any filter applied and a list with all documents and entities.
 
 However you can use any page from your Uwazi instance as a landing page, just copying and pasting the URL on the text box below custom page.
@@ -99,21 +100,21 @@ These are some examples:
 
 Always use URLs relative to your site, starting with / and skipping the `https://yoursite.com`.
 
-# Advanced settings
+## Advanced settings
 
-## Mailer configuration
+### Mailer configuration
 
 This is a JSON configuration object that should match the options values required by Nodemailer, as explained [here](http://nodemailer.com/smtp/).
 
 This setting takes precedence over all other mailer configuration. If left blank, then the configuration file in `/api/config/mailer.js` will be used.
 
-## Google Analytics
+### Google Analytics
 
 You can use Google Analytics to track website visits by adding your [Google Analytics ID](https://support.google.com/analytics/answer/3123666?hl=en) to Uwazi under Settings > Collection. 
 
 ![Google Analytics field](https://raw.githubusercontent.com/huridocs/uwazi-assets/master/wiki/screenshots/analytics.jpg) 
 
-## Custom header
+### Custom header
 
 Sadly is not possible to edit your header from Settings right now, but we will work to make it available soon. Meanwhile, you can create an [issue](https://github.com/huridocs/uwazi/issue/) and we will customise the header background image for you.
 
@@ -128,7 +129,7 @@ We will upload all the changes it for you once you have the final design.
 
 Our partner [CEJIL](https://cejil.uwazi.io) is a great example of landing page and header customization.
 
-# Create pages
+## Create pages
 
 In your settings, you can create static pages to your Uwazi document collection. You want to add a page that explains what the collection is, or shares your contact information. 
 
@@ -146,7 +147,7 @@ In your settings, you can create static pages to your Uwazi document collection.
 
 ![Find URL](https://raw.githubusercontent.com/huridocs/uwazi-assets/master/wiki/screenshots/pages_link.jpg)
 
-## Formatting the content of your page
+### Formatting the content of your page
 
 You can use HTML or [markdown syntax](https://guides.github.com/features/mastering-markdown/) to add images, lists, headers, quotes, and other formatting preferences. For help on using markdown, click on the _Help_ tab above the text field for the page. 
 
@@ -154,7 +155,7 @@ You can use HTML or [markdown syntax](https://guides.github.com/features/masteri
 
 We have also extended the markdown options to include some [custom syntax for Uwazi users](https://github.com/huridocs/uwazi/wiki/Custom-Syntax). This custom syntax allows users to embed lists of document/entity cards based on filter results, and embed YouTube videos.
 
-# Submission forms
+## Submission forms
 
 **Contact Form**
 
@@ -184,7 +185,7 @@ In both the public and private instance settings, under "_collection_":
 1. add the private instance link (stopping at .io) to "public form destination";
 2. add the template ID (the number in the URL) to "allowed public templates"
 
-# Configuration of navigation menu links
+## Configuration of navigation menu links
 
 In your settings, you can configure navigation menu links to display at the top of your site. These menu links can direct the user to either: the results of a specific filter, or a static page. 
 
@@ -200,7 +201,7 @@ In your settings, you can configure navigation menu links to display at the top 
 
 Note: Use only relative URLs (starting with a /) and not fully formed URLs like http://www.google.com. If you copied a page universal URL, be sure to delete the first part (http://yourdomain.com).
 
-# Configure filters
+## Configure filters
 
 Settings > filters allows you to pick-up which document types and entities are going to be displayed atop the side panel with the filtering options in the library. It also lets you rearrange the order and group them so users have a better understanding on the structure of your document collection.
 
@@ -218,7 +219,7 @@ Users will see the available filters on the library:
 
 ![Available filters](https://raw.githubusercontent.com/huridocs/uwazi-assets/master/wiki/screenshots/filters_public.jpg)
 
-## Default filters
+### Default filters
 
 Default filters can be configured in documents and entities metadata in settings by checking the option "Default filter". 
 
@@ -228,7 +229,7 @@ These filters are presented to the user when no document or entity type is selec
 
 ![](https://github.com/huridocs/uwazi-assets/raw/master/wiki/screenshots/default-filter-in-action.png)
 
-# Make your collection private
+## Make your collection private
 
 If you are handling sensitive information or you just want your collection be accessible only via login, you can configure Uwazi to do so in Settings > Collection:
 
@@ -238,7 +239,7 @@ By activating this option, your information won't be crawled by search engines a
 
 ![](https://github.com/huridocs/uwazi-assets/raw/master/wiki/screenshots/login-screen.png)
 
-# Editing web analytics
+## Editing web analytics
 
 Uwazi supports both Google Analytics and Matomo for tracking visits. You can find the configuration options in settings > collection:
 
