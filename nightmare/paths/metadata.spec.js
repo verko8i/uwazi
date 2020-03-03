@@ -380,7 +380,7 @@ describe('metadata path', () => {
         .wait(localSelectors.form.text)
         .clearInput(localSelectors.form.text)
         .clearInput(localSelectors.form.numeric)
-        .selectByLabel(localSelectors.form.select, 'Select...')
+        .selectByLabel(localSelectors.form.select, 'Select other "Testing dictionary"')
         .click(localSelectors.form.multiselectOptionOne)
         .click(localSelectors.form.relationshipOptionOne)
         .click(localSelectors.form.emptyDate)
