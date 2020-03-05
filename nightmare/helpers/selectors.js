@@ -1,3 +1,4 @@
+/*eslint-disable max-lines */
 /*eslint max-len: ["error", 500], */
 /*eslint key-spacing: "error" */
 export default {
@@ -215,6 +216,15 @@ export default {
       '#app > div.content > div > div > aside.side-panel.metadata-sidepanel.is-active > div.sidepanel-body > div > div.tab-content.tab-content-visible > div > div > div.item-actions > div.item-shortcut-group > a.item-shortcut.btn.btn-default.btn-hover-danger',
     sidePanelInfoTab:
       '#app > div.content > div > div > aside.side-panel.metadata-sidepanel.is-active > div.sidepanel-header > div > ul > li:nth-child(5) > div',
+    sidePanelFirstDocumentTitle:
+      '#app > div.content > div > div > aside.side-panel.metadata-sidepanel.is-active > div.sidepanel-body > div > div.tab-content.tab-content-visible > div > div.filelist > ul > li > div > div.file-originalname',
+    sidePanelFirstDocumentEditButton:
+      '#app > div.content > div > div > aside.side-panel.metadata-sidepanel.is-active > div.sidepanel-body > div > div.tab-content.tab-content-visible > div > div.filelist > ul > li > div > div:nth-child(2) > button',
+    fileFormInput: '#originalname',
+    fileFormSubmit:
+      '#app > div.content > div > div > aside.side-panel.metadata-sidepanel.is-active > div.sidepanel-body > div > div.tab-content.tab-content-visible > div > div.filelist > ul > li > form > div > div:nth-child(4) > button',
+    fileFormCancel:
+      '#app > div.content > div > div > aside.side-panel.metadata-sidepanel.is-active > div.sidepanel-body > div > div.tab-content.tab-content-visible > div > div.filelist > ul > li > form > div > div:nth-child(5) > button',
     sidePanelFirstAttachmentTitle:
       '#app > div.content > div > div > aside.side-panel.metadata-sidepanel.is-active > div.sidepanel-body > div > div.tab-content.tab-content-visible > div > div:nth-child(2) > div:nth-child(1) > div > div > a > span > span',
     sidePanelFirstAttachmentEditTitleButton:
