@@ -30,6 +30,7 @@ const templates: TemplateSchema[] = [
     default: true,
     commonProperties: [
       {
+        name: 'common_prop_1',
         label: 'commonProp1',
         type: 'multiselect',
       },
@@ -51,6 +52,7 @@ const templates: TemplateSchema[] = [
     default: false,
     commonProperties: [
       {
+        name: 'common_prop_2',
         label: 'commonProp2',
         type: 'multiselect',
       },

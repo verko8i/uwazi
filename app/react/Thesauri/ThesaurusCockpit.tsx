@@ -239,7 +239,7 @@ export class ThesaurusCockpitBase extends RouteHandler {
   }
 }
 
-interface ThesaurusCockpitStore {
+interface ThesaurusCockpitState {
   thesauri: {
     thesaurus: IImmutable<ThesaurusSchema>;
     models: IImmutable<ClassifierModelSchema>[];
@@ -249,25 +249,25 @@ interface ThesaurusCockpitStore {
 }
 
 const selectModels = createSelector(
-  (state: ThesaurusCockpitStore) => state.thesauri.models,
+  (state: ThesaurusCockpitState) => state.thesauri.models,
   models => models.map(m => m.toJS())
 );
 
 const selectThesaurus = createSelector(
-  (state: ThesaurusCockpitStore) => state.thesauri.thesaurus,
+  (state: ThesaurusCockpitState) => state.thesauri.thesaurus,
   thesaurus => thesaurus.toJS()
 );
 
 const selectSuggestionsTBPublished = createSelector(
-  (state: ThesaurusCockpitStore) => state.thesauri.suggestionsTBPublished,
+  (state: ThesaurusCockpitState) => state.thesauri.suggestionsTBPublished,
   suggestionsTBPublished => suggestionsTBPublished.toJS()
 );
 const selectSuggestionsTBReviewed = createSelector(
-  (state: ThesaurusCockpitStore) => state.thesauri.suggestionsTBReviewed,
+  (state: ThesaurusCockpitState) => state.thesauri.suggestionsTBReviewed,
   suggestionsTBReviewed => suggestionsTBReviewed.toJS()
 );
 
-function mapStateToProps(state: ThesaurusCockpitStore) {
+function mapStateToProps(state: ThesaurusCockpitState) {
   return {
     models: selectModels(state),
     thesaurus: selectThesaurus(state),

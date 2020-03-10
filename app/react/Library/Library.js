@@ -1,13 +1,14 @@
-import React from 'react';
 import RouteHandler from 'app/App/RouteHandler';
-import DocumentsList from 'app/Library/components/DocumentsList';
-import LibraryModeToggleButtons from 'app/Library/components/LibraryModeToggleButtons';
 import { enterLibrary, zoomIn, zoomOut } from 'app/Library/actions/libraryActions';
-import requestState from 'app/Library/helpers/requestState';
+import DocumentsList from 'app/Library/components/DocumentsList';
+import { ExportCSV } from 'app/Library/components/ExportCSV';
+import LibraryModeToggleButtons from 'app/Library/components/LibraryModeToggleButtons';
 import SearchButton from 'app/Library/components/SearchButton';
+import requestState from 'app/Library/helpers/requestState';
 import LibraryLayout from 'app/Library/LibraryLayout';
 import { wrapDispatch } from 'app/Multireducer';
 import ImportProgress from 'app/Uploads/components/ImportProgress';
+import React from 'react';
 
 export default class Library extends RouteHandler {
   constructor(props, context) {
@@ -48,6 +49,7 @@ export default class Library extends RouteHandler {
   render() {
     return (
       <LibraryLayout>
+        <ExportCSV />
         <LibraryModeToggleButtons storeKey="library" zoomIn={this.zoomIn} zoomOut={this.zoomOut} />
         <DocumentsList storeKey="library" />
       </LibraryLayout>

@@ -56,7 +56,7 @@ export interface TocSchema {
 export interface PropertySchema {
   id?: string;
   label: string;
-  name?: string;
+  name: string;
   isCommonProperty?: boolean;
   type:
     | 'date'
