@@ -97,8 +97,8 @@
     "babel-loader": "8.0.6",
     "babel-plugin-add-module-exports": "1.0.0",
     "babel-plugin-module-resolver": "3.2.0",
-    "babel-plugin-transform-class-properties": "^6.4.0",
     "babel-plugin-syntax-class-properties": "^6.13.0",
+    "babel-plugin-transform-class-properties": "^6.4.0",
     "babel-plugin-transform-react-remove-prop-types": "0.4.24",
     "batarange": "0.2.0",
     "bcrypt": "^3.0.3",
@@ -184,6 +184,7 @@
     "rtlcss": "^2.4.0",
     "sanitize-filename": "^1.6.0",
     "serialize-javascript": "^2.1.1",
+    "snyk": "^1.298.0",
     "socket.io": "2.0.4",
     "socket.io-client": "2.0.4",
     "superagent": "^5.0.6",
@@ -198,8 +199,7 @@
     "world-countries": "2.0.0",
     "wrap-range-text": "^1.0.1",
     "yauzl": "^2.10.0",
-    "yazl": "^2.5.1",
-    "snyk": "^1.298.0"
+    "yazl": "^2.5.1"
   },
   "devDependencies": {
     "@babel/cli": "7.4.4",
@@ -236,6 +236,7 @@
     "eslint-plugin-prettier": "^3.1.2",
     "eslint-plugin-react": "v7.12.4",
     "fetch-mock": "v7.3.3",
+    "http-proxy": "^1.18.0",
     "identity-obj-proxy": "^3.0.0",
     "img-loader": "2.0.1",
     "jasmine": "2.7.0",

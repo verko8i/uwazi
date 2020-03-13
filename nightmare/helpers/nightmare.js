@@ -18,6 +18,10 @@ export default function createNightmare(width = 1200, height = 600) {
     typeInterval: 10,
     x: 0,
     y: 0,
+    openDevTools: true,
+    switches: {
+      'proxy-server': 'http://localhost:3001',
+    },
     webPreferences: {
       preload: `${__dirname}/custom-preload.js`,
       webSecurity: false,
