@@ -1,4 +1,4 @@
-import { EntitySchema } from 'api/entities/entityType';
+import { EntitySchema } from 'shared/types/entityType';
 import { t } from 'app/I18N';
 import { Component } from 'react';
 import React from 'react';
@@ -41,8 +41,8 @@ function getCsvHeader(
 ): { id: string; title: string }[] {
   // iterate through each document and return list of template IDs associated with documents
   const templateIds: string[] = documents
-    .filter(document => document.get('template') === undefined)
-    .map(document => document.get('template'));
+    .filter((document: EntitySchema) => document.get('template') === undefined)
+    .map<string>((document: EntitySchema) => document.get('template'));
 
   // fetch all relevant template properties
   const properties: Set<string> = new Set<string>();
