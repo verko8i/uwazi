@@ -113,8 +113,6 @@ All this content can also be translate easily in Settings.
 
 1. Click on the gear icon in the top right corner of the site.
 
-![Gear icon](https://raw.githubusercontent.com/huridocs/uwazi-assets/master/wiki/screenshots/settings_link.jpg)
-
 2. Navigate to _Translations_ tab and click on the set of properties, dictionaries or content do you want to translate.
 
 ![translate](http://huridocs.github.io/uwazi-assets/wiki/screenshots/translate-settings-dictionary.png)
@@ -134,8 +132,6 @@ This guide tackles one of the main aspect of translations in Uwazi: **how to tra
 In Settings you can translate all the interface of your Uwazi site, such as buttons, labels, messages...
 
 1. Click on the gear icon in the top right corner of the site.
-
-![Gear icon](https://raw.githubusercontent.com/huridocs/uwazi-assets/master/wiki/screenshots/settings_link.jpg)
 
 2. Navigate to _Translations_ tab and click on System translations.
 
