@@ -46,7 +46,6 @@ Now your new connection will appear on the Connection tab.
 
 Also you can view the connections on an entity clicking on the **Connections** tab in the right sidebar. The results will display in the main viewing window. Here is an example:
 
-![Display entity relationships](http://g.recordit.co/2yb85Zop9N.gif)
 
 ## Create a table of contents
 
@@ -154,7 +153,6 @@ In Uwazi, a reference is a bookmark that connects selected content in a document
 
 Users will see this referenced text under the _References_ tab in the right sidebar. 
 
-![Reference text](http://g.recordit.co/QDzjvoqjrD.gif)
 
 ### Reference an entire document or entity
 
@@ -165,7 +163,6 @@ Users will see this referenced text under the _References_ tab in the right side
 
 Users will see this referenced text or document/entity under the _References_ tab in the right sidebar. When the reference is selected, the highlighted text will be displayed in the PDF. 
 
-![Reference an entire document or entity](http://g.recordit.co/CkfOkyrTAs.gif)
 
 ## Upload files to a document or entity
 
