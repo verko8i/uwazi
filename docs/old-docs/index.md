@@ -9,16 +9,7 @@
 .. toctree::
    :maxdepth: 1
 
-   Build-your-information-architecture
-   Add-documents-and-entities-to-your-collection
-   Organise-your-collection
-   Search-and-filter-your-collection
-   Manage-settings-and-configurations
-   Translate-your-collection
-   Design-and-data-visualization
    Uwazi-basics
-   Hosting-options
-   Data-federation
 ```
 
 ## Quick Links
