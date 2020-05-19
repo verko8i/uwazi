@@ -64,7 +64,7 @@ Significant funding for Uwazi development has been provided by the MacArthur Fou
 
 * **Landing page** is the first page or the home page that the users see when visiting your Uwazi instance. 
 
-* **Library**![image alt text](image_0.png)is the place where all of your entities are displayed together for the user to easily access. 
+* **Library**<img title="" src="image_0.png" alt="image alt text" width="50" data-align="inline">is the place where all of your entities are displayed together for the user to easily access. 
 
 * **Metadata** is data that provides information about other data. In Uwazi, it usually describes an entity.
 
@@ -77,8 +77,6 @@ Significant funding for Uwazi development has been provided by the MacArthur Fou
 * **Relationship Types** are different types of connections that you can form in between or even within entities. Each type of connection should be labeled accordingly.
 
 * **Reference** connects selected content in a document to something else. References can be made to: other selected content in the same document, other selected content in another document, an entire document, or an entity.
-
- 
 
 * **Template** is a starting point in Uwazi. They can be built and customised for each type of entity. You can add different metadata properties within each template.
 
@@ -136,7 +134,7 @@ Step 2: You will be prompted to input your authentication code. Enter the code f
 
 * If the code is approved, you will be logged in.
 
-FAQs related to two-factor authentication	
+FAQs related to two-factor authentication    
 
 * Google Authenticator: [https://support.google.com/accounts/answer/185834?hl=en](https://support.google.com/accounts/answer/185834?hl=en)
 
@@ -195,14 +193,14 @@ Step 2: After you have made all your changes, please ensure that you click **Sav
 * By default, the landing page is set to the full Library![image alt text](image_7.png)without any filters applied.
 
 * But you can use any page from your Uwazi instance as the landing page instead. Copy and paste the URL on the text box, accordingly. These are some examples:
-
-    * A static page: /page/dicxg0oagy3xgr7ixef80k9
-
-    * A library query: /library/?searchTerm=test
-
-    * A document or entity: /document/4y9i99fadjp833di /entity/9htbkgpkyy7j5rk9
-
-    * Always use a URL relative to your site, starting with / and skipping the [https://yoursite.com](https://yoursite.com).
+  
+  * A static page: /page/dicxg0oagy3xgr7ixef80k9
+  
+  * A library query: /library/?searchTerm=test
+  
+  * A document or entity: /document/4y9i99fadjp833di /entity/9htbkgpkyy7j5rk9
+  
+  * Always use a URL relative to your site, starting with / and skipping the [https://yoursite.com](https://yoursite.com).
 
 ### Track web analytics
 
@@ -213,10 +211,10 @@ Step 2: After you have made all your changes, please ensure that you click **Sav
 If you want to track analytics related to your collection visits, Uwazi supports both Google Analytics and Matomo.
 
 * Find your unique ID
-
-    * FAQ on  how to set up a [Google Analytics ID](https://support.google.com/analytics/answer/3123666?hl=en) to track website visits
-
-    *  If you are hosting your Uwazi with HURIDOCS, we provide Matomo as part of the hosting. Please contact us to activate your account.
+  
+  * FAQ on  how to set up a [Google Analytics ID](https://support.google.com/analytics/answer/3123666?hl=en) to track website visits
+  
+  * If you are hosting your Uwazi with HURIDOCS, we provide Matomo as part of the hosting. Please contact us to activate your account.
 
 * Add this unique ID to Uwazi.
 
@@ -315,7 +313,6 @@ If your instance will be in Arabic by default, the templates and properties shou
   </tr>
 </table>
 
-
 # **How to ****Create Thesauri**
 
 <table>
@@ -323,7 +320,6 @@ If your instance will be in Arabic by default, the templates and properties shou
     <td>In Uwazi, a thesaurus is a list of terms that are referred to throughout an Uwazi instance to provide structured details. These terms are also referenced as properties within each entity. Thesauri is the plural form of thesaurus.</td>
   </tr>
 </table>
-
 
 Using a thesaurus will make data entry and retrieval more precise, coherent and easy.
 
@@ -342,8 +338,6 @@ Step 3: Name your thesaurus, then you can start typing items to include on this 
 * For certain thesauri, nesting values together with the **Add Group** option can make information more accessible.
 
 Step 4: When you are finished, click **Save**.
-
- 
 
 ![image alt text](image_18.png)
 
@@ -409,7 +403,7 @@ Step 2: Go back to **Settings**, and click on **Templates**. Click **Edit** next
 
 Step 3: Drag the **Relationship** property from the right sidebar onto your template, click **Edit** on the newly added line, and rename the **Label**. 
 
-		![image alt text](image_21.png)
+        ![image alt text](image_21.png)
 
 Step 4: Now select the relationship type under the **Relationship*** field. The ***** indicates that this field is mandatory. This dropdown contains the relationship type(s) that have been defined in Step 1. 
 
@@ -463,7 +457,6 @@ In Uwazi, there are two areas where entities can be stored:
   </tr>
 </table>
 
-
 Before you can create a new entity, make sure you have already created a corresponding template!
 
 To create a new entity:
@@ -502,7 +495,7 @@ Step 2a: You can either drag or drop your PDF files into the dotted box, or you 
 
 * Skip to Step 3 to learn more about how to publish your document(s).
 
-### Import your documents through csv import (data migration) 
+### Import your documents through csv import (data migration)
 
 Step 2b: Organise your PDFs that are ready to be imported, and create a **Comma-Separated Values (CSV) file** with each of the field names you had earlier entered as properties in Uwazi. 
 
@@ -520,7 +513,7 @@ Step 2b: Organise your PDFs that are ready to be imported, and create a **Comma-
 
 * To do your CSV import, the main PDF file(s) and this csv file should be compressed within a single ZIP file. See the illustration below: 
 
-![image alt text](image_35.png) 		![image alt text](image_36.png)
+![image alt text](image_35.png)         ![image alt text](image_36.png)
 
 * To import the CSV file, click on the Private Documents icon ![image alt text](image_37.png) and then **Import**. Select your compressed ZIP file, and ensure that you choose the correct template before clicking import (as illustrated in the screenshot below).
 
@@ -560,7 +553,7 @@ Step 3: You can add a file that will be visible along with your entity.
 
 ![image alt text](image_40.png)
 
-### Import your attachments through csv import (data migration) 
+### Import your attachments through csv import (data migration)
 
 Step 1: 
 
@@ -663,7 +656,6 @@ Your Uwazi database offers a few different ways to search.
 ### Search only within a particular document
 
 3. To search for a word or a phrase **within a particular document**. 
-
 * Select the document you want to search.
 
 * Click on the search text function and input what you are looking for.
@@ -685,7 +677,6 @@ Exact term match by enclosing your search string with quotes. Ie. "Costa Rica" w
 AND, OR and NOT for boolean searches. Ie. "status AND women NOT Nicaragua" will match anything containing both the words status and women, and necessarily not containing the word Nicaragua.</td>
   </tr>
 </table>
-
 
 Please refer to Elasticsearch's [query string syntax page](https://www.elastic.co/guide/en/elasticsearch/reference/5.5/query-dsl-query-string-query.html#query-string-syntax) for more information on search options.
 
@@ -717,8 +708,7 @@ Step 6: You can always come back later to revise or add more contents by clickin
   </tr>
 </table>
 
-
-### Reference other text in the same or a different document 
+### Reference other text in the same or a different document
 
 Step 1: Go to **Settings** and click on **Relationship types** to add a "type of connection."
 
@@ -778,12 +768,11 @@ When the reference is selected, the highlighted text will be displayed in the PD
   </tr>
 </table>
 
-
 Uwazi supports connecting data in unstructured ways, meaning you don't need to follow a particular data structure or predefine a relational model upfront. Entities can be connected to each other in one-to-one or one-to-many relations arbitrarily:
 
 ![image alt text](image_57.png)
 
-### Understanding "information hubs"	
+### Understanding "information hubs"
 
 Information hubs hold together a series of entities. These hubs allow you to see the relationships between your entities. They also help to infer other relationships that might have previously been overlooked. 
 
@@ -791,7 +780,7 @@ Information hubs hold together a series of entities. These hubs allow you to see
 
 There are two ways in Uwazi to create connections between entities in your collection. 
 
-### Create relationships when adding new entities 
+### Create relationships when adding new entities
 
 You can create relationships when adding new entities if you have defined a template with a "Relationship" property. Click [here](#bookmark=id.u42q2wwp7f4d) to learn how to add a “Relationship” property to a template.
 
@@ -887,7 +876,7 @@ For example: <SearchBox placeholder="Search corruption cases..." />
 
 Renders: ![image alt text](image_68.png)
 
-### Display a selection of cards on a page 
+### Display a selection of cards on a page
 
 This code snippet added to any page or rich text field will render a card view:
 
@@ -955,7 +944,6 @@ DELETE: deletes existing information</td>
   </tr>
 </table>
 
-
 You can access the API instructions and options for your Uwazi instance by adding */api* to the end of your URL, like this:[ https://yourinstancename.uwazi.io/api](https://yourinstancename.uwazi.io/api). Uwazi requires **authorization** for POST and DELETE actions. Uwazi does not require authorization for GET actions. Uwazi currently does not use PUT actions via the API. 
 
 These are a few examples of some endpoints that Uwazi currently offers:
@@ -974,7 +962,6 @@ These are a few examples of some endpoints that Uwazi currently offers:
   </tr>
 </table>
 
-
 Additional notes regarding the /**entities** endpoint:
 
 * The templateId parameter sent in GET /entities/count_by_template is the mongo _id for a particular template type. For the time being, you could ask the API for templates (you can use [https://yourinstancename.uwazi.io/api/templates](https://yourinstancename.uwazi.io/api/templates)) and then get the _id from those results. Alternatively, the ID is shown in the URL if you et:dit a particular template.
@@ -991,7 +978,6 @@ Uwazi provides a list of "models" that describe the objects you have access to v
     <td></td>
   </tr>
 </table>
-
 
 # **How to Build Data Visualisation Components**
 
@@ -1042,7 +1028,6 @@ Just to give you an idea of what is possible in Uwazi, please take a look at som
     <td>In Uwazi, there are two ways to display your information on a geographic map: by using the map toggle in the Uwazi library, and by using a map visualisation component in a page. These instructions will help you configure your information to include geographic data and display that geographic data on a map. </td>
   </tr>
 </table>
-
 
 ### Configure your information to include geographic data
 
@@ -1098,7 +1083,6 @@ Renders:
   </tr>
 </table>
 
-
 EntityInfo allows you to create any HTML element (and HTML children) in a custom page. That element is assigned an *onClick* event. That click opens the side panel and displays that entity’s info on the panel. It mimics the behavior of clicking a Card in the library: the entity’s info is shown on the side panel.
 
 This component allows you to leave the design to the page coder, so there are no styles applied.  You can turn this into a button, it could be an entire section of the page, or even an area inside a graph. You decide where to use it and Uwazi provides the "click" functionality.
@@ -1133,11 +1117,11 @@ The purpose of this component is to iterate over data in the context and print i
 
 <ul>
 
-   <Repeat path="entities.rows">
+<Repeat path="entities.rows">
 
      <li><Value path="title"/></li>
 
-   </Repeat>
+</Repeat>
 
 </ul>
 
@@ -1149,15 +1133,15 @@ This component will generate a link to the correct entity viewer based on a give
 
 <ul>
 
- <Repeat path="entities.rows">
+<Repeat path="entities.rows">
 
     <li>
-
+    
          <EntityLink><Value path="title"/></EntityLink>
-
+    
     </li>
 
- </Repeat>
+</Repeat>
 
 </ul>
 
@@ -1188,4 +1172,3 @@ In order to use GitHub, you will need to:
 6. GitHub will let you know through e-mail notifications when your issue is being addressed.
 
 In the event your issue is sensitive or cannot be posted publicly, please email your contact at HURIDOCS, and we will get back to you directly.
-
