@@ -7,4 +7,5 @@ UWAZI Documentation
    :maxdepth: 1
    :glob:
 
+   Admin's guide <admin-docs/index>
    Old documentation <old-docs/index>
