@@ -10,7 +10,7 @@ Step 3: After saving a new page, you will see the unique URL assigned to it in a
 
 ## Format the content of a page
 
-When you create a new page, you will notice there is no content or design yet. It appears as a blank page. To add elements onto the page requires some understanding of HTML or [Markdown](https://guides.github.com/features/mastering-markdown/). This syntax can help you to add images, lists, charts, headers, quotes and other formatting preferences to your page. If you need help using Markdown, click on **[Hel**p](https://guides.github.com/features/mastering-markdown/) above the text box on the page.
+When you create a new page, you will notice there is no content or design yet. It appears as a blank page. To add elements onto the page requires some understanding of HTML or [Markdown](https://guides.github.com/features/mastering-markdown/). This syntax can help you to add images, lists, charts, headers, quotes and other formatting preferences to your page. If you need help using Markdown, click on [**Help**](https://guides.github.com/features/mastering-markdown/) above the text box on the page.
 
 ![image alt text](images/image_67.png)
 
@@ -18,9 +18,9 @@ We have also extended the Markdown options to include some custom syntax for Uwa
 
 ## Add a search box to a page
 
-This code snippet <SearchBox /> added to any page or rich text field will render a search box that will run queries on your collections of documents:
+This code snippet `<SearchBox />` added to any page or rich text field will render a search box that will run queries on your collections of documents:
 
-For example: <SearchBox placeholder="Search corruption cases..." />
+For example: `<SearchBox placeholder="Search corruption cases..." />`
 
 Renders: ![image alt text](images/image_68.png)
 

@@ -1,10 +1,6 @@
 # How to Display Your Information on a Map
 
-<table>
-  <tr>
-    <td>In Uwazi, there are two ways to display your information on a geographic map: by using the map toggle in the Uwazi library, and by using a map visualisation component in a page. These instructions will help you configure your information to include geographic data and display that geographic data on a map. </td>
-  </tr>
-</table>
+> In Uwazi, there are two ways to display your information on a geographic map: by using the map toggle in the Uwazi library, and by using a map visualisation component in a page. These instructions will help you configure your information to include geographic data and display that geographic data on a map.
 
 ## Configure your information to include geographic data
 
@@ -38,15 +34,19 @@ Step 2: Open the page that you want to display your map
 
 Step 3: The code snippet you will need to include in the page starts with:
 
+```jsx
 <Dataset geolocation="true" />
 
 <Map />
+```
 
 Step 4: Then you will add the URL snippet that you copied from the library:
 
+```jsx
 <Dataset url="/library/?q=(_types:!(%275bfbb1a0471dd0fc16ada146%27,%275d2d9f4622220717a93dbfcd%27),limit:0,order:desc,sort:creationDate,types:!(%275bfbb1a0471dd0fc16ada146%27,%275d2d9f4622220717a93dbfcd%27))" geolocation="true" />
 
 <Map />
+```
 
 Renders:
 

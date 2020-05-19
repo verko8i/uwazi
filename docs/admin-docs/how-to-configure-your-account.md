@@ -10,7 +10,7 @@ Step 3: You can change your email address here, as well as your account password
 
 ![image alt text](images/image_1.png)
 
-## Recover your password (*[screencas*t](https://drive.google.com/open?id=1fJcdhGPGRZEZMn6ExzS2csinH3FJwcBd))
+## Recover your password ([screencast](https://drive.google.com/open?id=1fJcdhGPGRZEZMn6ExzS2csinH3FJwcBd))
 
 Step 1: At the login screen, click **Forgot Password?**.
 
@@ -20,7 +20,7 @@ Step 2: You will receive an email from the [no-reply@uwazi.io](mailto:no-reply@u
 
 - To reinforce your account’s security, we recommend that you use unique and long passwords (a-Z, 0-9, &%).
 
-## Enable two-factor authentication (*[screencas*t](https://drive.google.com/open?id=1G02gKDvIejl4NxwpyiIqiIU5KPjbamBE))
+## Enable two-factor authentication ([screencast](https://drive.google.com/open?id=1G02gKDvIejl4NxwpyiIqiIU5KPjbamBE))
 
 To add an extra layer of security to your Uwazi instance:
 
@@ -38,7 +38,7 @@ Step 5: Enter the code and click **Confirm**.
 
 ![image alt text](images/image_2.png)
 
-## Login with two-factor authentication (*[screencas*t](https://drive.google.com/open?id=1lYbJHkDrDoAeYzoVcPcYQPoAWyUf3JmR))
+## Login with two-factor authentication ([screencast](https://drive.google.com/open?id=1lYbJHkDrDoAeYzoVcPcYQPoAWyUf3JmR))
 
 Step 1: Login to Uwazi with your credentials..
 

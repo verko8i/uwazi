@@ -1,34 +1,23 @@
 # How to Access the API for Your Instance
 
-<table>
-  <tr>
-    <td>An API allows one program to request data from another. API stands for application programming interface. An API provides you with data its programmers have made available to outside users.
+> An API allows one program to request data from another. API stands for application programming interface. An API provides you with data its programmers have made available to outside users.
+
+
 The server has the data and sets the language, while the client uses that language to ask for information from the server. To make some of data available to the public, programmers "expose endpoints," meaning they publish a portion of the language they’ve used to build their program. Endpoints return text that’s meant for computers to read.
 There are four types of actions an API can take:
-GET: requests data from a server — can be status or specifics (like last_name)
-POST: sends changes from the client to the server; think of this as adding information to the server, like making a new entry
-PUT: revises or adds to existing information
-DELETE: deletes existing information</td>
-  </tr>
-</table>
+
+- GET: requests data from a server — can be status or specifics (like last_name)
+- POST: sends changes from the client to the server; think of this as adding information to the server, like making a new entry
+- PUT: revises or adds to existing information
+- DELETE: deletes existing information
 
 You can access the API instructions and options for your Uwazi instance by adding _/api_ to the end of your URL, like this:[ https://yourinstancename.uwazi.io/api](https://yourinstancename.uwazi.io/api). Uwazi requires **authorization** for POST and DELETE actions. Uwazi does not require authorization for GET actions. Uwazi currently does not use PUT actions via the API.
 
 These are a few examples of some endpoints that Uwazi currently offers:
 
-<table>
-  <tr>
-    <td>/search</td>
-    <td>/entities</td>
-    <td>/attachments</td>
-  </tr>
-  <tr>
-    <td>
-</td>
-    <td></td>
-    <td></td>
-  </tr>
-</table>
+| /search | /entities | /attachments |
+| ------- | --------- | ------------ |
+|         |           |              |
 
 Additional notes regarding the /**entities** endpoint:
 
@@ -40,9 +29,6 @@ Additional notes regarding the /**search** endpoint:
 
 Uwazi provides a list of "models" that describe the objects you have access to via the API:
 
-<table>
-  <tr>
-    <td></td>
-    <td></td>
-  </tr>
-</table>
+|     |     |
+| --- | --- |
+|     |     |

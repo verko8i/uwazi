@@ -12,7 +12,7 @@ Step 2: Go back to **Settings**, and click on **Templates**. Click **Edit** next
 
 Step 3: Drag the **Relationship** property from the right sidebar onto your template, click **Edit** on the newly added line, and rename the **Label**.
 
-        ![image alt text](images/image_21.png)
+![image alt text](images/image_21.png)
 
 Step 4: Now select the relationship type under the **Relationship\*** field. The **\*** indicates that this field is mandatory. This dropdown contains the relationship type(s) that have been defined in Step 1.
 

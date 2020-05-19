@@ -6,7 +6,7 @@ If you work in a team or in collaboration with other people, Uwazi allows admini
 
 ![image alt text](images/image_3.png)
 
-## Add new users to your instance (*[screencas*t](https://drive.google.com/open?id=12Z-HtNoPU2vcS80CG30496ECAL5vEJI3))
+## Add new users to your instance ([screencast](https://drive.google.com/open?id=12Z-HtNoPU2vcS80CG30496ECAL5vEJI3))
 
 Step 1: Only an Admin can create new users. Go to **Settings** and click on **Users**.
 

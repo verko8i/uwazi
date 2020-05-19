@@ -1,10 +1,6 @@
 # How to Create References
 
-<table>
-  <tr>
-    <td>In Uwazi, a reference is a bookmark that connects highlighted content in one document to something else -- such as other selected content in the same document, other selected content in a different document, or even an entire document or an entity.</td>
-  </tr>
-</table>
+> In Uwazi, a reference is a bookmark that connects highlighted content in one document to something else -- such as other selected content in the same document, other selected content in a different document, or even an entire document or an entity.
 
 ### Reference other text in the same or a different document
 
@@ -40,7 +36,7 @@ Step 1: Go to **Settings** and click on **Relationship types** to add a "type of
 
 - **Note:** You must define your relationship type(s) first in order to create references.
 
-Step 2: Click **View **on the file for which you want to create the reference. Note that references can only be made from text selected in a PDF document.
+Step 2: Click **View** on the file for which you want to create the reference. Note that references can only be made from text selected in a PDF document.
 
 Step 3: Highlight the segment of text you want and click on **Connect to a document**.
 

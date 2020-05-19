@@ -22,7 +22,7 @@ Templates are the foundation of your Uwazi platform as they allow you to attribu
 
 - Relationship - allow you to create connections between this entity and another one
 
-## Add different properties to a template ([screencas*t](https://drive.google.com/open?id=1pqcKphveaHFJqrrBPT53b2jE5lo75BMf))
+## Add different properties to a template ([screencast](https://drive.google.com/open?id=1pqcKphveaHFJqrrBPT53b2jE5lo75BMf))
 
 Properties provide an important way for users to view important metadata at a glance and filter the collection to better understand and analyse the collection.
 
@@ -44,11 +44,6 @@ Step 6: Remember to click on **Save** after you have created properties for each
 
 ![image alt text](images/image_17.png)
 
-<table>
-  <tr>
-    <td>Note:
-When you add a select or multi-select property to a template, you will see a field entitled "Select list*" in which you are required to choose a Thesaurus from the dropdown. Related to: How to create thesauri.
-If you intend to do a CSV import to bring your metadata into Uwazi in bulk, remember that the property names on these templates must match your field names in the CSV file. This will allow the data migration to be imported successfully with all the metadata in the correct template.
-If your instance will be in Arabic by default, the templates and properties should be created in latin characters and then translated into Arabic. If this is not done, it will trigger a known bug. Our developers are working to fix it.</td>
-  </tr>
-</table>
+> Note: When you add a select or multi-select property to a template, you will see a field entitled "Select list*" in which you are required to choose a Thesaurus from the dropdown. Related to: How to create thesauri.
+> If you intend to do a CSV import to bring your metadata into Uwazi in bulk, remember that the property names on these templates must match your field names in the CSV file. This will allow the data migration to be imported successfully with all the metadata in the correct template.
+> If your instance will be in Arabic by default, the templates and properties should be created in latin characters and then translated into Arabic. If this is not done, it will trigger a known bug. Our developers are working to fix it.

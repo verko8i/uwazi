@@ -1,10 +1,6 @@
 # How to Create Thesauri
 
-<table>
-  <tr>
-    <td>In Uwazi, a thesaurus is a list of terms that are referred to throughout an Uwazi instance to provide structured details. These terms are also referenced as properties within each entity. Thesauri is the plural form of thesaurus.</td>
-  </tr>
-</table>
+> In Uwazi, a thesaurus is a list of terms that are referred to throughout an Uwazi instance to provide structured details. These terms are also referenced as properties within each entity. Thesauri is the plural form of thesaurus.
 
 Using a thesaurus will make data entry and retrieval more precise, coherent and easy.
 
@@ -18,7 +14,7 @@ Step 3: Name your thesaurus, then you can start typing items to include on this 
 
 - You can move items around by dragging and dropping.
 
-- You can also use the **Sort **option to organize your list alphabetically.
+- You can also use the **Sort** option to organize your list alphabetically.
 
 - For certain thesauri, nesting values together with the **Add Group** option can make information more accessible.
 

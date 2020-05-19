@@ -31,13 +31,13 @@ Step 2: After you have made all your changes, please ensure that you click **Sav
 - By default, the landing page is set to the full Library![image alt text](images/image_7.png)without any filters applied.
 
 - But you can use any page from your Uwazi instance as the landing page instead. Copy and paste the URL on the text box, accordingly. These are some examples:
-
+  
   - A static page: /page/dicxg0oagy3xgr7ixef80k9
-
+  
   - A library query: /library/?searchTerm=test
-
+  
   - A document or entity: /document/4y9i99fadjp833di /entity/9htbkgpkyy7j5rk9
-
+  
   - Always use a URL relative to your site, starting with / and skipping the [https://yoursite.com](https://yoursite.com).
 
 ## Track web analytics
@@ -49,9 +49,9 @@ Step 2: After you have made all your changes, please ensure that you click **Sav
 If you want to track analytics related to your collection visits, Uwazi supports both Google Analytics and Matomo.
 
 - Find your unique ID
-
+  
   - FAQ on how to set up a [Google Analytics ID](https://support.google.com/analytics/answer/3123666?hl=en) to track website visits
-
+  
   - If you are hosting your Uwazi with HURIDOCS, we provide Matomo as part of the hosting. Please contact us to activate your account.
 
 - Add this unique ID to Uwazi.
