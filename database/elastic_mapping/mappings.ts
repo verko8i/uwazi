@@ -127,6 +127,7 @@ const relationshipType = () => {
   return {
     label: text,
     value: id,
+    pepinillos: id,
     type: noIndexText,
   };
 };

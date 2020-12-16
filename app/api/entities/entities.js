@@ -65,6 +65,9 @@ async function denormalizeMetadata(metadata, entity, template, dictionariesByKey
             elem.label = partner[0].title;
             elem.icon = partner[0].icon;
             elem.type = partner[0].file ? 'document' : 'entity';
+            if (prop.inherit) {
+              elem.pepinillos = partner[0].metadata.inherited[0].value;
+            }
           }
         }
         return elem;

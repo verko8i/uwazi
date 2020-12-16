@@ -29,14 +29,21 @@ function processFilters(filters, properties) {
 
     let { type } = property;
     const value = filters[filterName];
+    let name = `${property.name}.value`;
     if (['date', 'multidate', 'numeric'].includes(property.type)) {
       type = 'range';
     }
+
     if (['select', 'multiselect', 'relationship'].includes(property.type)) {
       type = 'multiselect';
     }
+
     if (property.type === 'multidaterange' || property.type === 'daterange') {
       type = 'daterange';
+    }
+
+    if (['relationship'].includes(property.type)) {
+      name = `${property.name}.pepinillos`;
     }
 
     if (['multidaterange', 'daterange', 'date', 'multidate'].includes(property.type)) {
@@ -67,7 +74,7 @@ function processFilters(filters, properties) {
         value,
         suggested,
         type,
-        name: `${property.name}.value`,
+        name,
       },
     ];
   }, []);
@@ -268,7 +275,8 @@ const _denormalizeAggregations = async (aggregations, templates, dictionaries, l
           const { label, icon } = labelItem;
           return Object.assign(bucket, { label, icon });
         }
-        return null;
+
+        return { ...bucket, label: bucket.key };
       })
       .filter(item => item);
 
