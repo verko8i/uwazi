@@ -59,14 +59,17 @@ async function denormalizeMetadata(metadata, entity, template, dictionariesByKey
         }
 
         if (prop.type === 'relationship') {
-          const [ partner ] = await model.get({ sharedId: elem.value, language: entity.language });
+          const [partner] = await model.get({ sharedId: elem.value, language: entity.language });
 
           if (partner && partner && partner.title) {
             elem.label = partner.title;
             elem.icon = partner.icon;
             elem.type = partner.file ? 'document' : 'entity';
             if (prop.inherit) {
-              elem.pepinillos = partner.metadata.inherited.map(p => ({ value: p.value, label: p.label }));
+              elem.pepinillos = partner.metadata.inherited.map(p => ({
+                value: p.value,
+                label: p.label,
+              }));
             }
           }
         }
@@ -361,10 +364,7 @@ export default {
       }
 
       const entities = await this.get(query, 'sharedId', { skip: offset, limit });
-      await this.updateMetdataFromRelationships(
-        entities.map(entity => entity.sharedId),
-        language
-      );
+      await this.updateMetdataFromRelationships(entities.map(entity => entity.sharedId), language);
       await process(offset + limit, totalRows);
     };
     const totalRows = await this.count(query);
@@ -673,6 +673,14 @@ export default {
         p => propertyContent && p.content && propertyContent.toString() === p.content.toString()
       );
 
+    const propsInheriting = (await templates.get({
+      'properties.inheritProperty': properties[0]._id.toString(),
+    })).reduce((flattenedProps, template) => flattenedProps.concat(template.properties), []);
+    // .filter(p => p.type === 'relationship')
+    // .filter(p => properties.map(prop => prop._id).includes(p.content.toString()));
+
+    console.log(propsInheriting);
+
     if (!properties.length) {
       return Promise.resolve();
     }
@@ -695,13 +703,44 @@ export default {
       )
     );
 
+    await Promise.all(
+      propsInheriting.map(property =>
+        model.updateMany(
+          { language: restrictLanguage, [`metadata.${property.name}.pepinillos.value`]: valueId },
+          {
+            $set: Object.keys(changes).reduce(
+              (set, prop) => ({
+                ...set,
+                [`metadata.relationship.$[relationshipIndex].pepinillos.$[pepinilloIndex].label`]: changes[
+                  prop
+                ],
+              }),
+              {}
+            ),
+          },
+          {
+            arrayFilters: [
+              { 'relationshipIndex.pepinillos': { $exists: true } },
+              { 'pepinilloIndex.value': valueId },
+            ],
+          }
+        )
+      )
+    );
+
     return search.indexEntities({
       $and: [
         {
           language: restrictLanguage,
         },
         {
-          $or: properties.map(property => ({ [`metadata.${property.name}.value`]: valueId })),
+          $or: properties
+            .map(property => ({ [`metadata.${property.name}.value`]: valueId }))
+            .concat(
+              propsInheriting.map(property => ({
+                [`metadata.${property.name}.pepinillos.value`]: valueId,
+              }))
+            ),
         },
       ],
     });
@@ -717,10 +756,15 @@ export default {
 
   /** Propagate the title change of a related entity to all entity metadata. */
   async renameRelatedEntityInMetadata(relatedEntity) {
-    if (!relatedEntity.metadata.inherited) return;
     await this.renameInMetadata(
       relatedEntity.sharedId,
-      { pepinillos: relatedEntity.metadata.inherited[0].value, icon: relatedEntity.icon },
+      {
+        label: relatedEntity.title,
+        ...(relatedEntity.metadata.inherited
+          ? { pepinillos: relatedEntity.metadata.inherited[0].value }
+          : {}),
+        // icon: relatedEntity.icon,
+      },
       relatedEntity.template,
       {
         types: [propertyTypes.select, propertyTypes.multiselect, propertyTypes.relationship],
