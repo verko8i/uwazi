@@ -59,14 +59,14 @@ async function denormalizeMetadata(metadata, entity, template, dictionariesByKey
         }
 
         if (prop.type === 'relationship') {
-          const partner = await model.get({ sharedId: elem.value, language: entity.language });
+          const [ partner ] = await model.get({ sharedId: elem.value, language: entity.language });
 
-          if (partner && partner[0] && partner[0].title) {
-            elem.label = partner[0].title;
-            elem.icon = partner[0].icon;
-            elem.type = partner[0].file ? 'document' : 'entity';
+          if (partner && partner && partner.title) {
+            elem.label = partner.title;
+            elem.icon = partner.icon;
+            elem.type = partner.file ? 'document' : 'entity';
             if (prop.inherit) {
-              elem.pepinillos = partner[0].metadata.inherited[0].value;
+              elem.pepinillos = partner.metadata.inherited.map(p => ({ value: p.value, label: p.label }));
             }
           }
         }
@@ -122,13 +122,7 @@ async function updateEntity(entity, _template) {
   return Promise.all(
     docLanguages.map(async d => {
       if (d._id.toString() === entity._id.toString()) {
-        if (
-          (entity.title && currentDoc.title !== entity.title) ||
-          (entity.icon && !currentDoc.icon) ||
-          (entity.icon && currentDoc.icon && currentDoc.icon._id !== entity.icon._id)
-        ) {
-          await this.renameRelatedEntityInMetadata({ ...currentDoc, ...entity });
-        }
+        await this.renameRelatedEntityInMetadata({ ...currentDoc, ...entity });
         const toSave = { ...entity };
         if (entity.metadata) {
           toSave.metadata = await denormalizeMetadata(entity.metadata, entity, template);
@@ -723,9 +717,10 @@ export default {
 
   /** Propagate the title change of a related entity to all entity metadata. */
   async renameRelatedEntityInMetadata(relatedEntity) {
+    if (!relatedEntity.metadata.inherited) return;
     await this.renameInMetadata(
       relatedEntity.sharedId,
-      { label: relatedEntity.title, icon: relatedEntity.icon },
+      { pepinillos: relatedEntity.metadata.inherited[0].value, icon: relatedEntity.icon },
       relatedEntity.template,
       {
         types: [propertyTypes.select, propertyTypes.multiselect, propertyTypes.relationship],

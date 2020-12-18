@@ -42,8 +42,8 @@ function processFilters(filters, properties) {
       type = 'daterange';
     }
 
-    if (['relationship'].includes(property.type)) {
-      name = `${property.name}.pepinillos`;
+    if (['relationship'].includes(property.type) && property.inherit) {
+      name = `${property.name}.pepinillos.label`;
     }
 
     if (['multidaterange', 'daterange', 'date', 'multidate'].includes(property.type)) {
