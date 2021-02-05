@@ -10,6 +10,7 @@ import { ThesaurusSchema } from 'shared/types/thesaurusType';
 import { UserGroupSchema } from 'shared/types/userGroupType';
 import { elasticTesting } from './elastic_testing';
 import { testingTenants } from './testingTenants';
+import { Settings } from '../../shared/types/settingsType';
 
 mongoose.Promise = Promise;
 mongoose.set('useFindAndModify', false);
@@ -23,6 +24,7 @@ export type DBFixture = {
   entities?: EntitySchema[];
   dictionaries?: ThesaurusSchema[];
   usergroups?: UserGroupSchema[];
+  settings?: Settings[];
   [k: string]: any;
 };
 
