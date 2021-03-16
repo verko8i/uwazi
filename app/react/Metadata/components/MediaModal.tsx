@@ -2,21 +2,32 @@ import React from 'react';
 import { connect } from 'react-redux';
 import ReactModal from 'react-modal';
 import { Tabs, TabLink, TabContent } from 'react-tabs-redux';
+import filesize from 'filesize';
 
+import { AttachmentSchema } from 'shared/types/commonTypes';
 import { Translate } from 'app/I18N';
 import { Icon } from 'app/UI';
+import { RenderAttachment } from 'app/Attachments/components/RenderAttachment';
+import { ObjectId } from 'mongodb';
 
 export interface MediaModalProps {
   isOpen: boolean;
   onClose: () => void;
-  selectedDocument: any;
+  attachments: AttachmentSchema[];
+  onChange: (id: string | ObjectId) => void;
+  selectedId: string | ObjectId | null;
 }
 
-export const MediaModalCmp = ({ isOpen, onClose, selectedDocument }: MediaModalProps) => {
-  const { attachments } = selectedDocument;
-
-  const getAttachmentUrl = (attachment: any) => {
-    return attachment.url || window.location.origin + `/api/files/${attachment.filename}`;
+export const MediaModalCmp = ({
+  isOpen,
+  onClose,
+  attachments,
+  onChange,
+  selectedId,
+}: MediaModalProps) => {
+  const handleAttachmentClick = (id: string | ObjectId) => () => {
+    onChange(id);
+    onClose();
   };
 
   return (
@@ -48,16 +59,20 @@ export const MediaModalCmp = ({ isOpen, onClose, selectedDocument }: MediaModalP
             <TabContent for="selectFromFiles" className="tab-content">
               <div className="media-grid container">
                 <div className="row">
-                  {attachments.map((attachment: any, key: number) => (
-                    <div className="media-grid-item" key={`attachment_${key}`}>
+                  {attachments.map((attachment, key) => (
+                    <div
+                      className="media-grid-item"
+                      key={`attachment_${key}`}
+                      onClick={handleAttachmentClick(attachment._id!)}
+                    >
                       <div className="media-grid-card">
                         <div className="media-grid-card-header">
                           <h5>{attachment.originalname}</h5>
-                          <span>12 MB</span>
+                          {!!attachment.size && <span>{filesize(attachment.size)}</span>}
                         </div>
                         <div className="media-grid-card-content">
                           <div className="media">
-                            <img src={getAttachmentUrl(attachment)} />
+                            <RenderAttachment attachment={attachment} />
                           </div>
                         </div>
                       </div>
@@ -76,8 +91,12 @@ export const MediaModalCmp = ({ isOpen, onClose, selectedDocument }: MediaModalP
 const mapStateToProps = (state: any, ownProps: any) => {
   const { selectedDocuments } = state.library.ui.toJS();
 
+  const attachments: AttachmentSchema[] = selectedDocuments[0]
+    ? selectedDocuments[0].attachments
+    : [];
+
   return {
-    selectedDocument: selectedDocuments[0] || { attachments: [] },
+    attachments,
   };
 };
 
